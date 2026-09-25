@@ -179,9 +179,9 @@ Understanding how fire behaves in microgravity can help us better prepare for th
 
 ## 👨‍💻 Contributors
 
-- ****
-- ****
-- ****
+- **Hager Hassan**
+- **Menna Walid**
+- **Afnan Mohamed**
 - **Abdelrahman Hesham Mohammed**
 - **Tarek Ahmed Tarek**
 - **Ahmed Emad Shataa**
