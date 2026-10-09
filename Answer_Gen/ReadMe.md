@@ -519,3 +519,8 @@ Contributions, issue reports, and suggestions are welcome. Potential areas inclu
 If you use or extend this project, please document the data sources, model configurations, evaluation methods, and limitations of your implementation.
 
 **Built to explore how retrieval, language models, and scientific evidence can work together to make experimental combustion data more accessible.**
+**Developed by Tarek Ahmed.**
+
+
+
+
