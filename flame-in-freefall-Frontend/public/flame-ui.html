@@ -1,0 +1,1136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PyroNova</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>html,body{margin:0;background:#05070D}</style>
+<style id="page-style"></style>
+</head>
+<body>
+<div id="app"></div>
+<template id="tpl-Main">
+
+<div class="stars" style="font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif; color: #EEF1F7; background-color: #05070D; line-height: 1.6; overflow: hidden; position: relative">
+
+<div style="position: absolute; top: -260px; left: 50%; width: 1100px; height: 800px; transform: translateX(-50%); background: radial-gradient(closest-side, rgba(255, 106, 40, 0.20), rgba(77, 140, 255, 0.10) 55%, rgba(5, 7, 13, 0) 100%); pointer-events: none"></div>
+
+<header style="position: relative; padding: 20px 24px 0">
+<div style="max-width: 1200px; margin: 0 auto; padding: 10px 12px 10px 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; background: rgba(14, 18, 28, 0.7); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 999px; backdrop-filter: blur(14px)">
+<a href="Main.dc.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #FFFFFF; min-height: 44px">
+<span style="width: 34px; height: 34px; border-radius: 50%; background: radial-gradient(circle, #FFE3B0 0%, #FF7A2E 35%, rgba(77, 163, 255, 0.9) 62%, rgba(77, 163, 255, 0) 72%); box-shadow: 0 0 24px rgba(77, 163, 255, 0.5)"></span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 19px">PyroNova</span>
+</a>
+<nav class="nav" aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 2px">
+<a class="on" href="Main.dc.html">Home</a>
+<a href="Dashboard.dc.html">Dashboard</a>
+<a href="Chat.dc.html">AI Chat</a>
+<a href="Guidelines.dc.html">Safety Guidelines</a>
+</nav>
+<a class="btn" href="Dashboard.dc.html" style="padding: 10px 20px; min-height: 44px; font-size: 15px">Launch app</a>
+</div>
+</header>
+
+<section style="position: relative; max-width: 1200px; margin: 0 auto; padding: 90px 24px 40px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 26px">
+<div style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px 8px 8px; border-radius: 999px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); font-size: 14px; color: #C3CAD8">
+<span style="background: #FF6A28; color: #FFFFFF; font-weight: 700; font-size: 12px; padding: 3px 10px; border-radius: 999px">NEW</span>
+AI insights from 60 years of NASA combustion research
+</div>
+<h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(44px, 7vw, 88px); line-height: 1.02; letter-spacing: -0.035em; max-width: 1000px; text-wrap: balance">Without gravity, fire plays by <span class="grad">different rules.</span></h1>
+<p style="margin: 0; font-size: clamp(17px, 1.6vw, 20px); color: #A9B2C3; max-width: 680px; text-wrap: pretty">Explore NASA's microgravity fire experiments, ask an AI that cites its sources, and get fire-safety guidelines for crews heading to the Moon and Mars.</p>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; padding-top: 6px">
+<a class="btn" href="Dashboard.dc.html">Explore the dashboard
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="btn2" href="Chat.dc.html">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg>
+Ask the AI</a>
+</div>
+</section>
+
+<section aria-label="Microgravity flame visual" style="position: relative; max-width: 1200px; margin: 0 auto; padding: 20px 24px 80px">
+<div style="position: relative; height: 520px; border-radius: 32px; border: 1px solid rgba(255, 255, 255, 0.08); background: radial-gradient(ellipse at 50% 55%, #0E1830 0%, #070A13 70%); overflow: hidden; display: flex; align-items: center; justify-content: center">
+<div class="orbit" style="position: absolute; width: 440px; height: 440px; border-radius: 50%; border: 1px dashed rgba(125, 184, 255, 0.25)">
+<span style="position: absolute; top: -5px; left: 50%; width: 10px; height: 10px; border-radius: 50%; background: #7DB8FF; box-shadow: 0 0 14px #7DB8FF"></span>
+</div>
+<div class="orbit2" style="position: absolute; width: 330px; height: 330px; border-radius: 50%; border: 1px solid rgba(255, 138, 76, 0.18)">
+<span style="position: absolute; bottom: 20px; right: 30px; width: 8px; height: 8px; border-radius: 50%; background: #FF8A4C; box-shadow: 0 0 12px #FF8A4C"></span>
+</div>
+<div class="flame" style="position: absolute; width: 260px; height: 260px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 230, 180, 0.95) 0%, rgba(255, 140, 60, 0.9) 14%, rgba(255, 90, 31, 0.35) 26%, rgba(7, 10, 19, 0) 34%, rgba(77, 163, 255, 0.0) 38%, rgba(77, 163, 255, 0.95) 46%, rgba(77, 163, 255, 0.35) 54%, rgba(77, 163, 255, 0) 68%); box-shadow: 0 0 120px rgba(77, 163, 255, 0.35)"></div>
+<div style="position: absolute; width: 14px; height: 14px; border-radius: 50%; background: #2A3142; border: 1px solid #4A5468"></div>
+
+<div class="float" style="position: absolute; top: 56px; left: 6%; background: rgba(14, 18, 28, 0.8); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 14px 18px; text-align: left; backdrop-filter: blur(10px); display: flex; gap: 12px; align-items: center">
+<span style="width: 38px; height: 38px; border-radius: 10px; background: rgba(77, 163, 255, 0.15); display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7DB8FF" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="3"></circle></svg></span>
+<span style="display: flex; flex-direction: column"><span style="font-size: 12px; color: #8E98AB; font-family: 'JetBrains Mono', monospace">FLEX · ISS</span><span style="font-weight: 600; font-size: 15px">Cool flames discovered</span></span>
+</div>
+<div class="float2" style="position: absolute; bottom: 60px; right: 6%; background: rgba(14, 18, 28, 0.8); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 14px 18px; text-align: left; backdrop-filter: blur(10px); display: flex; gap: 12px; align-items: center">
+<span style="width: 38px; height: 38px; border-radius: 10px; background: rgba(255, 106, 40, 0.15); display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF8A4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-4-1-6 1-9z"></path></svg></span>
+<span style="display: flex; flex-direction: column"><span style="font-size: 12px; color: #8E98AB; font-family: 'JetBrains Mono', monospace">SAFFIRE · CYGNUS</span><span style="font-weight: 600; font-size: 15px">≈1 m spacecraft-scale fires</span></span>
+</div>
+<div class="float2" style="position: absolute; top: 80px; right: 8%; background: rgba(14, 18, 28, 0.8); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 12px 16px; backdrop-filter: blur(10px); font-size: 14px; display: flex; gap: 8px; align-items: center">
+<span style="width: 8px; height: 8px; border-radius: 50%; background: #3DDC97; box-shadow: 0 0 10px #3DDC97"></span>7 campaigns indexed
+</div>
+<div style="position: absolute; bottom: 24px; left: 28px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #6F7A8F">µg flame · spherical · diffusion-controlled</div>
+</div>
+</section>
+
+<section style="position: relative; border-top: 1px solid rgba(255, 255, 255, 0.06); border-bottom: 1px solid rgba(255, 255, 255, 0.06); background: rgba(255, 255, 255, 0.015)">
+<div style="max-width: 1200px; margin: 0 auto; padding: 28px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 16px 48px; color: #8E98AB; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 17px">
+<span style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 500; font-size: 14px; color: #6F7A8F">DATA FROM</span>
+<span>International Space Station</span>
+<span>Cygnus Vehicles</span>
+<span>NASA Glenn Drop Towers</span>
+<span>NASA PSI Archive</span>
+</div>
+</section>
+
+<section style="position: relative; max-width: 1200px; margin: 0 auto; padding: 110px 24px 40px; display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px">
+<div style="font-size: 14px; font-weight: 600; color: #FF8A4C; letter-spacing: 0.06em">THE SCIENCE</div>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.08; letter-spacing: -0.025em; max-width: 760px">What changes when fire floats</h2>
+<p style="margin: 0; color: #A9B2C3; font-size: 18px; max-width: 620px">Four behaviors every spacecraft designer and crew member should understand.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 20px">
+<div class="card" style="background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015)); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; padding: 30px; display: flex; flex-direction: column; gap: 16px">
+<span style="width: 52px; height: 52px; border-radius: 14px; background: rgba(77, 163, 255, 0.14); display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7DB8FF" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="4"></circle></svg></span>
+<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 600">Spheres, not teardrops</h3>
+<p style="margin: 0; color: #A9B2C3; font-size: 15px">No buoyancy means hot gas doesn't rise. Oxygen arrives only by slow diffusion, so flames round out into spheres.</p>
+</div>
+<div class="card" style="background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015)); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; padding: 30px; display: flex; flex-direction: column; gap: 16px">
+<span style="width: 52px; height: 52px; border-radius: 14px; background: rgba(160, 130, 255, 0.14); display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#B9A5FF" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg></span>
+<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 600">Dimmer and bluer</h3>
+<p style="margin: 0; color: #A9B2C3; font-size: 15px">Less glowing soot means many flames burn a faint blue — harder for crews and cameras to spot.</p>
+</div>
+<div class="card" style="background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015)); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; padding: 30px; display: flex; flex-direction: column; gap: 16px">
+<span style="width: 52px; height: 52px; border-radius: 14px; background: rgba(61, 220, 151, 0.12); display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#5FE3AA" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 8h11a3 3 0 1 0-3-3"></path><path d="M3 12h16a3 3 0 1 1-3 3"></path><path d="M3 16h7"></path></svg></span>
+<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 600">Airflow decides</h3>
+<p style="margin: 0; color: #A9B2C3; font-size: 15px">In still air a flame can starve itself. A gentle breeze — like cabin ventilation — keeps it alive and spreading.</p>
+</div>
+<div class="card" style="background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015)); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; padding: 30px; display: flex; flex-direction: column; gap: 16px">
+<span style="width: 52px; height: 52px; border-radius: 14px; background: rgba(255, 106, 40, 0.14); display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF8A4C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-4-1-6 1-9z"></path></svg></span>
+<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 600">Invisible cool flames</h3>
+<p style="margin: 0; color: #A9B2C3; font-size: 15px">On the ISS, FLEX saw heptane droplets keep reacting at low temperature after the visible flame went out.</p>
+</div>
+</div>
+</section>
+
+<section style="position: relative; max-width: 1200px; margin: 0 auto; padding: 90px 24px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 56px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 18px">
+<div style="font-size: 14px; font-weight: 600; color: #FF8A4C; letter-spacing: 0.06em">HOW IT WORKS</div>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.08; letter-spacing: -0.025em">From scattered reports to clear decisions</h2>
+<p style="margin: 0; color: #A9B2C3; font-size: 18px; text-wrap: pretty">Decades of results live in papers, technical reports and raw datasets. Flame in Freefall connects them into one place you can search, compare and act on.</p>
+<div style="padding-top: 8px"><a class="btn2" href="Dashboard.dc.html">See the data</a></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 16px">
+<div class="card" style="display: flex; gap: 20px; align-items: flex-start; padding: 24px; border-radius: 20px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08)">
+<span style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #FF8A3D, #FF5A1F); display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; flex: none">1</span>
+<div><div style="font-weight: 700; font-size: 19px">Ingest</div><div style="color: #A9B2C3; font-size: 15px">Experiment datasets and reports from NASA PSI and the Technical Reports Server are parsed into one catalog.</div></div>
+</div>
+<div class="card" style="display: flex; gap: 20px; align-items: flex-start; padding: 24px; border-radius: 20px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08)">
+<span style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #7DB8FF, #3D7BFF); display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; flex: none">2</span>
+<div><div style="font-weight: 700; font-size: 19px">Understand with AI</div><div style="color: #A9B2C3; font-size: 15px">A retrieval-backed LLM summarizes each campaign and compares fuel, airflow, oxygen and pressure — with citations.</div></div>
+</div>
+<div class="card" style="display: flex; gap: 20px; align-items: flex-start; padding: 24px; border-radius: 20px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08)">
+<span style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #5FE3AA, #22A971); display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; color: #04140C; flex: none">3</span>
+<div><div style="font-weight: 700; font-size: 19px">Act safely</div><div style="color: #A9B2C3; font-size: 15px">Findings become prevention, detection, suppression and habitat-design guidelines linked to their evidence.</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<section style="position: relative; max-width: 1200px; margin: 0 auto; padding: 40px 24px 90px">
+<div style="border-radius: 32px; border: 1px solid rgba(255, 255, 255, 0.08); background: radial-gradient(ellipse at 0% 0%, rgba(255, 106, 40, 0.16), rgba(5, 7, 13, 0) 55%), radial-gradient(ellipse at 100% 100%, rgba(77, 163, 255, 0.16), rgba(5, 7, 13, 0) 55%), #0A0E18; padding: clamp(32px, 5vw, 64px); display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 720px">
+<div style="font-size: 14px; font-weight: 600; color: #7DB8FF; letter-spacing: 0.06em">WHY NOW</div>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(30px, 4vw, 46px); line-height: 1.1; letter-spacing: -0.02em">Artemis brings new air, new gravity, new fire risk.</h2>
+<p style="margin: 0; color: #A9B2C3; font-size: 17px">NASA's proposed exploration atmosphere lowers pressure and raises oxygen to shorten spacewalk prep. Both make materials burn more readily.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 6px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1)">
+<div class="grad" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 60px; line-height: 1">34%</div>
+<div style="color: #A9B2C3; font-size: 15px">Oxygen in the exploration atmosphere, vs. 21% on the ISS</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1)">
+<div class="grad" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 60px; line-height: 1">8.2 psia</div>
+<div style="color: #A9B2C3; font-size: 15px">Cabin pressure (56.5 kPa), vs. 14.7 psia at sea level</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1)">
+<div class="grad" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 60px; line-height: 1">0.16 g</div>
+<div style="color: #A9B2C3; font-size: 15px">Lunar gravity — weak buoyancy can make some materials more flammable than in 1 g</div>
+</div>
+</div>
+</div>
+</section>
+
+<section style="position: relative; max-width: 1200px; margin: 0 auto; padding: 0 24px 100px; display: flex; flex-direction: column; gap: 36px">
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px">
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(30px, 4vw, 46px); letter-spacing: -0.02em">Everything in one platform</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 20px">
+<a class="card" href="Dashboard.dc.html" style="text-decoration: none; color: #EEF1F7; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.08); background: rgba(255, 255, 255, 0.03); padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<div style="height: 150px; border-radius: 16px; background: #0B1020; border: 1px solid rgba(255, 255, 255, 0.06); padding: 16px; display: flex; align-items: flex-end; gap: 10px; box-sizing: border-box">
+<span style="flex: 1; height: 40%; border-radius: 6px; background: #FF7A2E"></span><span style="flex: 1; height: 70%; border-radius: 6px; background: #FFB067"></span><span style="flex: 1; height: 55%; border-radius: 6px; background: #7DB8FF"></span><span style="flex: 1; height: 90%; border-radius: 6px; background: #FF5A1F"></span><span style="flex: 1; height: 65%; border-radius: 6px; background: #3D7BFF"></span>
+</div>
+<div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 22px">Dashboard →</div>
+<div style="color: #A9B2C3; font-size: 15px">Filter every campaign by fuel, platform and year, with AI summaries.</div>
+</a>
+<a class="card" href="Chat.dc.html" style="text-decoration: none; color: #EEF1F7; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.08); background: rgba(255, 255, 255, 0.03); padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<div style="height: 150px; border-radius: 16px; background: #0B1020; border: 1px solid rgba(255, 255, 255, 0.06); padding: 16px; display: flex; flex-direction: column; justify-content: center; gap: 10px; box-sizing: border-box">
+<span style="align-self: flex-end; background: #FF6A28; border-radius: 14px 14px 4px 14px; padding: 8px 12px; font-size: 13px; color: #FFFFFF">Why are µg flames blue?</span>
+<span style="align-self: flex-start; background: rgba(255, 255, 255, 0.07); border-radius: 14px 14px 14px 4px; padding: 8px 12px; font-size: 13px; color: #C3CAD8">Less soot forms, so less glow…</span>
+</div>
+<div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 22px">AI Chat →</div>
+<div style="color: #A9B2C3; font-size: 15px">Ask in plain language. Every answer cites the experiments behind it.</div>
+</a>
+<a class="card" href="Guidelines.dc.html" style="text-decoration: none; color: #EEF1F7; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.08); background: rgba(255, 255, 255, 0.03); padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<div style="height: 150px; border-radius: 16px; background: #0B1020; border: 1px solid rgba(255, 255, 255, 0.06); padding: 16px; display: flex; flex-direction: column; justify-content: center; gap: 10px; box-sizing: border-box; font-size: 13px; color: #C3CAD8">
+<span style="display: flex; gap: 8px; align-items: center"><span style="width: 18px; height: 18px; border-radius: 5px; background: #22A971"></span>Shut off ventilation first</span>
+<span style="display: flex; gap: 8px; align-items: center"><span style="width: 18px; height: 18px; border-radius: 5px; background: #22A971"></span>Isolate rack power</span>
+<span style="display: flex; gap: 8px; align-items: center"><span style="width: 18px; height: 18px; border-radius: 5px; border: 1.5px solid #4A5468"></span>Watch for re-ignition</span>
+</div>
+<div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 22px">Safety Guidelines →</div>
+<div style="color: #A9B2C3; font-size: 15px">Evidence-backed rules for prevention, detection and suppression.</div>
+</a>
+</div>
+</section>
+
+<footer style="position: relative; border-top: 1px solid rgba(255, 255, 255, 0.06)">
+<div style="max-width: 1200px; margin: 0 auto; padding: 40px 24px 56px; display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; color: #8E98AB; font-size: 14px">
+<div style="display: flex; flex-direction: column; gap: 6px; max-width: 420px">
+<div style="color: #FFFFFF; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 17px">Flame in Freefall</div>
+<div>Built by [TEAM NAME] for the NASA Space Apps Challenge. Not an official NASA product.</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="color: #FFFFFF; font-weight: 600">Data sources</div>
+<a href="https://psi.nasa.gov">NASA Physical Sciences Informatics</a>
+<a href="https://ntrs.nasa.gov">NASA Technical Reports Server</a>
+</div>
+</div>
+</footer>
+
+</div>
+</template><template id="tpl-Dashboard">
+
+<div style="font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif; color: #EEF1F7; background: radial-gradient(ellipse at 80% -10%, rgba(77, 140, 255, 0.12), rgba(5, 7, 13, 0) 50%), radial-gradient(ellipse at 10% 0%, rgba(255, 106, 40, 0.10), rgba(5, 7, 13, 0) 40%), #05070D; line-height: 1.5; display: flex; flex-wrap: wrap; min-height: 100vh">
+
+<aside class="side" style="flex: 1 1 240px; max-width: 100%; box-sizing: border-box; padding: 24px 16px; border-right: 1px solid rgba(255, 255, 255, 0.06); background: rgba(8, 11, 19, 0.8); display: flex; flex-direction: column; gap: 28px">
+<a href="Main.dc.html" style="padding: 4px 8px; gap: 10px; color: #FFFFFF">
+<span style="width: 32px; height: 32px; border-radius: 50%; background: radial-gradient(circle, #FFE3B0 0%, #FF7A2E 35%, rgba(77, 163, 255, 0.9) 62%, rgba(77, 163, 255, 0) 72%); box-shadow: 0 0 20px rgba(77, 163, 255, 0.5); flex: none"></span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px">Flame in Freefall</span>
+</a>
+<nav aria-label="App" style="display: flex; flex-direction: column; gap: 4px">
+<div style="font-size: 12px; font-weight: 600; color: #6F7A8F; letter-spacing: 0.08em; padding: 0 14px 6px">MENU</div>
+<a class="on" href="Dashboard.dc.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="2"></rect><rect x="14" y="3" width="7" height="5" rx="2"></rect><rect x="14" y="12" width="7" height="9" rx="2"></rect><rect x="3" y="16" width="7" height="5" rx="2"></rect></svg>Dashboard</a>
+<a href="Chat.dc.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg>AI Chat</a>
+<a href="Guidelines.dc.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg>Safety Guidelines</a>
+<a href="Main.dc.html"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"></path></svg>Home</a>
+</nav>
+<div style="margin-top: auto; border-radius: 16px; padding: 16px; background: rgba(77, 163, 255, 0.08); border: 1px solid rgba(77, 163, 255, 0.2); display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px"><span style="width: 8px; height: 8px; border-radius: 50%; background: #3DDC97; box-shadow: 0 0 10px #3DDC97"></span>Data synced</div>
+<div style="font-size: 13px; color: #A9B2C3">NASA PSI · NTRS · [LAST SYNC DATE]</div>
+</div>
+</aside>
+
+<main style="flex: 999 1 640px; min-width: 0; box-sizing: border-box; padding: 28px clamp(16px, 3vw, 40px) 60px; display: flex; flex-direction: column; gap: 24px">
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 2px">
+<div style="font-size: 14px; color: #8E98AB">Overview</div>
+<h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(26px, 3vw, 34px); letter-spacing: -0.02em">Microgravity Combustion Dashboard</h1>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<button class="btn2" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"></path></svg>Export report</button>
+<a class="btn" href="Chat.dc.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"></path></svg>Ask AI</a>
+</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(210px, 100%), 1fr)); gap: 16px">
+<div class="panel" style="padding: 20px; display: flex; gap: 16px; align-items: center">
+<span style="width: 48px; height: 48px; border-radius: 14px; background: rgba(255, 106, 40, 0.15); display: flex; align-items: center; justify-content: center; flex: none"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF8A4C" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-4-1-6 1-9z"></path></svg></span>
+<div><div style="font-size: 14px; color: #8E98AB">Campaigns indexed</div><div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 30px; line-height: 1.2">{{total}}</div></div>
+</div>
+<div class="panel" style="padding: 20px; display: flex; gap: 16px; align-items: center">
+<span style="width: 48px; height: 48px; border-radius: 14px; background: rgba(77, 163, 255, 0.15); display: flex; align-items: center; justify-content: center; flex: none"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7DB8FF" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(-30 12 12)"></ellipse></svg></span>
+<div><div style="font-size: 14px; color: #8E98AB">Test platforms</div><div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 30px; line-height: 1.2">4</div></div>
+</div>
+<div class="panel" style="padding: 20px; display: flex; gap: 16px; align-items: center">
+<span style="width: 48px; height: 48px; border-radius: 14px; background: rgba(185, 165, 255, 0.15); display: flex; align-items: center; justify-content: center; flex: none"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B9A5FF" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span>
+<div><div style="font-size: 14px; color: #8E98AB">Years of research</div><div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 30px; line-height: 1.2">60</div></div>
+</div>
+<div class="panel" style="padding: 20px; display: flex; gap: 16px; align-items: center">
+<span style="width: 48px; height: 48px; border-radius: 14px; background: rgba(61, 220, 151, 0.14); display: flex; align-items: center; justify-content: center; flex: none"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5FE3AA" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg></span>
+<div><div style="font-size: 14px; color: #8E98AB">Guidelines derived</div><div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 30px; line-height: 1.2">12</div></div>
+</div>
+</div>
+
+<section aria-label="AI insight" style="border-radius: 20px; padding: 22px 24px; background: linear-gradient(110deg, rgba(255, 106, 40, 0.16), rgba(77, 140, 255, 0.12)); border: 1px solid rgba(255, 138, 76, 0.28); display: flex; flex-wrap: wrap; gap: 18px; align-items: center">
+<span style="width: 46px; height: 46px; border-radius: 14px; background: linear-gradient(135deg, #FF8A3D, #FF5A1F); display: flex; align-items: center; justify-content: center; flex: none"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.9" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"></path></svg></span>
+<div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 4px">
+<div style="font-size: 13px; font-weight: 700; color: #FFB38A; letter-spacing: 0.06em">AI INSIGHT · ACROSS 3 CAMPAIGNS</div>
+<div style="font-size: 16px; text-wrap: pretty">The most dangerous condition for solid materials isn't still air — it's a <strong>gentle airflow like cabin ventilation</strong>. Shutting off ventilation is the most effective first response.</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px">
+<span style="font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 999px; background: rgba(0, 0, 0, 0.3); color: #EEF1F7">BASS</span>
+<span style="font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 999px; background: rgba(0, 0, 0, 0.3); color: #EEF1F7">Saffire</span>
+<span style="font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 999px; background: rgba(0, 0, 0, 0.3); color: #EEF1F7">SoFIE</span>
+</div>
+</section>
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: stretch">
+
+<section class="panel" aria-label="Experiment catalog" style="flex: 999 1 560px; min-width: 0; padding: 22px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between">
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 20px">Experiment catalog</h2>
+<div style="position: relative; flex: 0 1 300px">
+<label for="search" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Search campaigns</label>
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8E98AB" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="position: absolute; left: 14px; top: 13px"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg>
+<input id="search" type="search" value="{{q}}" onChange="{{onQ}}" placeholder="Search droplet, Cygnus, PMMA…" style="background: rgba(0, 0, 0, 0.35); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 10px 14px 10px 42px; min-height: 44px; box-sizing: border-box; color: #EEF1F7; font: inherit; font-size: 15px; width: 100%">
+</div>
+</div>
+<div role="group" aria-label="Filter by fuel class" style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{cats}}" as="c" hint-placeholder-count="6">
+<button class="chip" type="button" aria-pressed="{{c.pressed}}" onClick="{{c.pick}}" style="font: inherit; font-size: 14px; font-weight: 500; padding: 9px 16px; min-height: 44px; border-radius: 999px; cursor: pointer; border: 1px solid {{c.bd}}; background: {{c.bg}}; color: {{c.fg}}">{{c.label}}</button>
+</sc-for>
+</div>
+<div style="overflow-x: auto">
+<div style="min-width: 640px; display: flex; flex-direction: column">
+<div style="display: grid; grid-template-columns: 1.7fr 1fr 1.4fr 0.8fr; gap: 12px; padding: 10px 14px; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; color: #6F7A8F; border-bottom: 1px solid rgba(255, 255, 255, 0.06)">
+<div>CAMPAIGN</div><div>FUEL CLASS</div><div>PLATFORM</div><div>YEARS</div>
+</div>
+<sc-for list="{{rows}}" as="r" hint-placeholder-count="7">
+<button class="row" type="button" onClick="{{r.pick}}" aria-pressed="{{r.pressed}}" style="display: grid; grid-template-columns: 1.7fr 1fr 1.4fr 0.8fr; gap: 12px; align-items: center; text-align: left; font: inherit; color: #EEF1F7; padding: 14px; min-height: 60px; cursor: pointer; border: 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); border-left: 3px solid {{r.bl}}; background: {{r.bg}}">
+<span style="display: flex; flex-direction: column"><span style="font-weight: 600">{{r.name}}</span><span style="font-size: 13px; color: #8E98AB">{{r.full}}</span></span>
+<span><span style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: {{r.tint}}; color: {{r.color}}">{{r.catLabel}}</span></span>
+<span style="font-size: 14px; color: #C3CAD8">{{r.platform}}</span>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #C3CAD8">{{r.years}}</span>
+</button>
+</sc-for>
+<sc-if value="{{noRows}}" hint-placeholder-val="{{ false }}">
+<div style="padding: 32px 14px; color: #8E98AB; font-size: 15px; text-align: center">No campaigns match. Try another search or filter.</div>
+</sc-if>
+</div>
+</div>
+</section>
+
+<aside class="panel" aria-label="Selected campaign" style="flex: 1 1 360px; min-width: 0; padding: 24px; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="align-self: flex-start; font-size: 13px; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: {{d.tint}}; color: {{d.color}}">{{d.catLabel}} · {{d.years}}</span>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 30px; line-height: 1.1">{{d.name}}</h2>
+<div style="color: #A9B2C3; font-size: 14px">{{d.full}} · {{d.platform}}</div>
+</div>
+<div style="border-radius: 14px; padding: 16px; background: rgba(77, 140, 255, 0.08); border: 1px solid rgba(77, 140, 255, 0.2); display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #9DCBFF"><svg width="14" height="14" viewBox="0 0 24 24" fill="#9DCBFF" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"></path></svg>AI SUMMARY</div>
+<p style="margin: 0; font-size: 15px; text-wrap: pretty">{{d.summary}}</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #6F7A8F">KEY FINDINGS</div>
+<sc-for list="{{d.findings}}" as="f" hint-placeholder-count="2">
+<div style="display: flex; gap: 10px; font-size: 15px; color: #D3D8E2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5FE3AA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><path d="M5 12l5 5 9-10"></path></svg><span>{{f}}</span></div>
+</sc-for>
+</div>
+<div style="border-radius: 14px; padding: 16px; background: rgba(255, 106, 40, 0.1); border: 1px solid rgba(255, 106, 40, 0.28); display: flex; gap: 12px">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF8A4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><path d="M12 3l9 16H3z"></path><path d="M12 10v4M12 17h.01"></path></svg>
+<div style="display: flex; flex-direction: column; gap: 2px"><div style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #FFB38A">SAFETY IMPLICATION</div><div style="font-size: 15px">{{d.implication}}</div></div>
+</div>
+<a class="btn" href="Chat.dc.html" style="justify-content: center; margin-top: auto">Ask AI about {{d.name}}</a>
+</aside>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px">
+
+<section class="panel" aria-label="Campaign timeline" style="padding: 22px; display: flex; flex-direction: column; gap: 16px; flex: 2 1 560px; min-width: 0">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px">
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 20px">Campaign timeline</h2>
+<span style="font-size: 13px; color: #8E98AB">2008 – today · dates approximate</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<sc-for list="{{bars}}" as="b" hint-placeholder-count="7">
+<div style="display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 12px; align-items: center">
+<div style="font-size: 14px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #C3CAD8">{{b.name}}</div>
+<div style="position: relative; height: 24px; background: rgba(255, 255, 255, 0.04); border-radius: 8px">
+<div style="position: absolute; top: 0; bottom: 0; left: {{b.left}}; width: {{b.width}}; background: {{b.color}}; border-radius: 8px; opacity: {{b.opacity}}; box-shadow: 0 0 18px -4px {{b.color}}"></div>
+</div>
+</div>
+</sc-for>
+<div style="display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 12px">
+<div></div>
+<div style="position: relative; height: 18px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #6F7A8F">
+<sc-for list="{{ticks}}" as="t" hint-placeholder-count="5">
+<span style="position: absolute; left: {{t.left}}; transform: translateX(-50%)">{{t.label}}</span>
+</sc-for>
+</div>
+</div>
+</div>
+</section>
+
+<section class="panel" aria-label="Campaigns by fuel class" style="padding: 22px; display: flex; flex-direction: column; gap: 18px; flex: 1 1 320px; min-width: 0">
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 20px">By fuel class</h2>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px">
+<div style="width: 150px; height: 150px; border-radius: 50%; background: {{donut}}; display: flex; align-items: center; justify-content: center; flex: none">
+<div style="width: 100px; height: 100px; border-radius: 50%; background: #0B0F19; display: flex; flex-direction: column; align-items: center; justify-content: center"><span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 28px; line-height: 1">{{total}}</span><span style="font-size: 12px; color: #8E98AB">campaigns</span></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; flex: 1 1 140px">
+<sc-for list="{{legend}}" as="l" hint-placeholder-count="5">
+<div style="display: flex; align-items: center; gap: 10px; font-size: 14px"><span style="width: 12px; height: 12px; border-radius: 4px; background: {{l.color}}"></span><span style="flex: 1; color: #C3CAD8">{{l.label}}</span><span style="font-weight: 600">{{l.n}}</span></div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section class="panel" aria-label="Flame spread versus airflow" style="padding: 22px; display: flex; flex-direction: column; gap: 14px; flex: 2 1 560px; min-width: 0">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px">
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 20px">Flame spread vs. airflow</h2>
+<span style="font-size: 13px; color: #8E98AB">Thin solids in µg · qualitative, not to scale</span>
+</div>
+<svg viewBox="0 0 640 260" width="100%" role="img" aria-label="Qualitative curve: no spread in still air, peak at gentle airflow, blow-off at high airflow" style="display: block">
+<defs><linearGradient id="ff-area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF6A28" stop-opacity="0.45"></stop><stop offset="1" stop-color="#FF6A28" stop-opacity="0"></stop></linearGradient></defs>
+<line x1="50" y1="60" x2="620" y2="60" stroke="rgba(255,255,255,0.05)"></line>
+<line x1="50" y1="120" x2="620" y2="120" stroke="rgba(255,255,255,0.05)"></line>
+<line x1="50" y1="180" x2="620" y2="180" stroke="rgba(255,255,255,0.05)"></line>
+<line x1="50" y1="220" x2="620" y2="220" stroke="rgba(255,255,255,0.15)"></line>
+<path d="M62 220 C 95 220, 115 80, 190 64 C 270 48, 370 100, 470 130 C 530 148, 565 180, 595 220 Z" fill="url(#ff-area)"></path>
+<path d="M62 220 C 95 220, 115 80, 190 64 C 270 48, 370 100, 470 130 C 530 148, 565 180, 595 220" fill="none" stroke="#FF7A2E" stroke-width="3" stroke-linecap="round"></path>
+<circle cx="190" cy="64" r="6" fill="#FF7A2E" stroke="#0B0F19" stroke-width="3"></circle>
+<rect x="132" y="18" width="116" height="26" rx="13" fill="rgba(255,106,40,0.18)"></rect>
+<text x="190" y="35" fill="#FFB38A" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Most hazardous</text>
+<text x="62" y="244" fill="#8E98AB" font-family="Plus Jakarta Sans, sans-serif" font-size="12">Still air · <tspan fill="#9DCBFF" font-weight="600">starves</tspan></text>
+<text x="190" y="244" fill="#8E98AB" font-family="Plus Jakarta Sans, sans-serif" font-size="12" text-anchor="middle">Cabin ventilation</text>
+<text x="600" y="244" fill="#8E98AB" font-family="Plus Jakarta Sans, sans-serif" font-size="12" text-anchor="end">Strong flow · <tspan fill="#9DCBFF" font-weight="600">blow-off</tspan></text>
+<text x="38" y="140" fill="#8E98AB" font-family="Plus Jakarta Sans, sans-serif" font-size="12" text-anchor="middle" transform="rotate(-90 38 140)">Spread rate</text>
+</svg>
+</section>
+
+<section class="panel" aria-label="Data sources" style="padding: 22px; display: flex; flex-direction: column; gap: 14px; flex: 1 1 320px; min-width: 0">
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 20px">Data sources</h2>
+<a href="https://psi.nasa.gov" style="display: flex; justify-content: space-between; align-items: center; gap: 10px; text-decoration: none; color: #EEF1F7; padding: 14px; border-radius: 12px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06); min-height: 44px"><span><span style="display: block; font-weight: 600">NASA PSI</span><span style="font-size: 13px; color: #8E98AB">Physical Sciences Informatics</span></span><span style="color: #8E98AB">↗</span></a>
+<a href="https://ntrs.nasa.gov" style="display: flex; justify-content: space-between; align-items: center; gap: 10px; text-decoration: none; color: #EEF1F7; padding: 14px; border-radius: 12px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06); min-height: 44px"><span><span style="display: block; font-weight: 600">NASA NTRS</span><span style="font-size: 13px; color: #8E98AB">Technical Reports Server</span></span><span style="color: #8E98AB">↗</span></a>
+</section>
+</div>
+
+</main>
+</div>
+</template><template id="tpl-Chat">
+
+<div style="font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif; color: #EEF1F7; background: #05070D; line-height: 1.6; display: flex; height: 100vh; overflow: hidden">
+
+<aside class="hist" style="width: 280px; flex: none; box-sizing: border-box; padding: 20px 14px; border-right: 1px solid rgba(255, 255, 255, 0.06); background: #080B13; display: flex; flex-direction: column; gap: 18px">
+<a href="Main.dc.html" style="color: #FFFFFF; padding: 4px 8px">
+<span style="width: 30px; height: 30px; border-radius: 50%; background: radial-gradient(circle, #FFE3B0 0%, #FF7A2E 35%, rgba(77, 163, 255, 0.9) 62%, rgba(77, 163, 255, 0) 72%); box-shadow: 0 0 18px rgba(77, 163, 255, 0.5); flex: none"></span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 17px">Flame in Freefall</span>
+</a>
+<button type="button" onClick="{{reset}}" style="display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.12); background: rgba(255, 255, 255, 0.04); color: #FFFFFF; font: inherit; font-weight: 600; font-size: 15px; cursor: pointer">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>New chat</button>
+<div style="display: flex; flex-direction: column; gap: 2px">
+<div style="font-size: 12px; font-weight: 600; color: #6F7A8F; letter-spacing: 0.08em; padding: 0 12px 6px">RECENT</div>
+<sc-for list="{{recent}}" as="h" hint-placeholder-count="4">
+<button class="h" type="button" onClick="{{h.ask}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg><span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{h.title}}</span></button>
+</sc-for>
+</div>
+<nav aria-label="App" style="margin-top: auto; display: flex; flex-direction: column; gap: 2px; border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 12px">
+<a href="Dashboard.dc.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="2"></rect><rect x="14" y="3" width="7" height="5" rx="2"></rect><rect x="14" y="12" width="7" height="9" rx="2"></rect><rect x="3" y="16" width="7" height="5" rx="2"></rect></svg>Dashboard</a>
+<a href="Guidelines.dc.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"></path></svg>Safety Guidelines</a>
+<a href="Main.dc.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"></path></svg>Home</a>
+</nav>
+</aside>
+
+<main style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; background: radial-gradient(ellipse at 50% -20%, rgba(77, 140, 255, 0.12), rgba(5, 7, 13, 0) 55%)">
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; padding: 14px 24px; border-bottom: 1px solid rgba(255, 255, 255, 0.06)">
+<div style="display: flex; align-items: center; gap: 10px">
+<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 17px">Fire Safety Assistant</span>
+<span style="font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: rgba(61, 220, 151, 0.12); color: #5FE3AA">RAG · 7 campaigns</span>
+</div>
+<div style="display: flex; gap: 6px; flex-wrap: wrap">
+<a href="Dashboard.dc.html" style="font-size: 14px; color: #A9B2C3; text-decoration: none; padding: 10px 12px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Dashboard</a>
+<a href="Guidelines.dc.html" style="font-size: 14px; color: #A9B2C3; text-decoration: none; padding: 10px 12px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Guidelines</a>
+</div>
+</div>
+
+<div style="flex: 1 1 auto; overflow-y: auto; padding: 28px 20px">
+<div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 26px">
+
+<sc-if value="{{empty}}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; padding: 40px 0 10px">
+<div style="width: 72px; height: 72px; border-radius: 50%; background: radial-gradient(circle, #FFE3B0 0%, #FF7A2E 30%, rgba(77, 163, 255, 0.9) 58%, rgba(77, 163, 255, 0) 72%); box-shadow: 0 0 50px rgba(77, 163, 255, 0.5)"></div>
+<h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(26px, 3.4vw, 36px); letter-spacing: -0.02em">Ask anything about fire in space</h1>
+<p style="margin: 0; color: #A9B2C3; font-size: 16px; max-width: 520px">Answers come from NASA microgravity combustion experiments, with sources for every claim.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 12px">
+<sc-for list="{{suggestions}}" as="s" hint-placeholder-count="4">
+<button class="sugg" type="button" onClick="{{s.ask}}" style="text-align: left; font: inherit; color: #EEF1F7; cursor: pointer; padding: 18px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.09); background: rgba(255, 255, 255, 0.03); display: flex; flex-direction: column; gap: 4px; min-height: 44px">
+<span style="font-weight: 600; font-size: 15px">{{s.title}}</span>
+<span style="font-size: 14px; color: #8E98AB">{{s.sub}}</span>
+</button>
+</sc-for>
+</div>
+</sc-if>
+
+<sc-for list="{{messages}}" as="m" hint-placeholder-count="0">
+<sc-if value="{{m.isUser}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; justify-content: flex-end">
+<div style="max-width: 78%; background: linear-gradient(135deg, #FF7A2E, #FF5A1F); color: #FFFFFF; padding: 12px 18px; border-radius: 20px 20px 6px 20px; font-size: 15px">{{m.text}}</div>
+</div>
+</sc-if>
+<sc-if value="{{m.isAI}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; gap: 14px; align-items: flex-start">
+<span style="width: 36px; height: 36px; border-radius: 50%; flex: none; background: radial-gradient(circle, #FFE3B0 0%, #FF7A2E 32%, rgba(77, 163, 255, 0.9) 60%, rgba(77, 163, 255, 0) 72%); box-shadow: 0 0 18px rgba(77, 163, 255, 0.45)"></span>
+<div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<div style="font-size: 15.5px; white-space: pre-line; color: #E2E6EE">{{m.text}}</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+<span style="font-size: 12px; font-weight: 600; color: #6F7A8F; letter-spacing: 0.06em">SOURCES</span>
+<sc-for list="{{m.sources}}" as="src" hint-placeholder-count="2">
+<a href="Dashboard.dc.html" style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; padding: 5px 12px; border-radius: 999px; background: rgba(77, 140, 255, 0.12); border: 1px solid rgba(77, 140, 255, 0.25); color: #9DCBFF; text-decoration: none">{{src}}</a>
+</sc-for>
+</div>
+</div>
+</div>
+</sc-if>
+</sc-for>
+
+<sc-if value="{{typing}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; gap: 14px; align-items: center">
+<span style="width: 36px; height: 36px; border-radius: 50%; flex: none; background: radial-gradient(circle, #FFE3B0 0%, #FF7A2E 32%, rgba(77, 163, 255, 0.9) 60%, rgba(77, 163, 255, 0) 72%)"></span>
+<div style="display: flex; gap: 6px; padding: 14px 18px; border-radius: 16px; background: rgba(255, 255, 255, 0.05)">
+<span class="dot" style="width: 8px; height: 8px; border-radius: 50%; background: #C3CAD8"></span>
+<span class="dot2" style="width: 8px; height: 8px; border-radius: 50%; background: #C3CAD8"></span>
+<span class="dot3" style="width: 8px; height: 8px; border-radius: 50%; background: #C3CAD8"></span>
+</div>
+<span style="font-size: 14px; color: #8E98AB">Searching experiment records…</span>
+</div>
+</sc-if>
+
+</div>
+</div>
+
+<div style="padding: 12px 20px 22px">
+<form onSubmit="{{onSubmit}}" style="max-width: 800px; margin: 0 auto; display: flex; align-items: center; gap: 10px; padding: 8px 8px 8px 20px; border-radius: 20px; background: #0E1320; border: 1px solid rgba(255, 255, 255, 0.12); box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.8)">
+<label for="ask" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Ask a question</label>
+<input id="ask" type="text" value="{{draft}}" onChange="{{onDraft}}" placeholder="Ask about cool flames, materials, suppression…" autocomplete="off" style="flex: 1; min-width: 0; background: transparent; border: 0; outline: none; color: #EEF1F7; font: inherit; font-size: 16px; min-height: 44px">
+<button class="send" type="submit" aria-label="Send" style="width: 46px; height: 46px; border-radius: 14px; border: 0; cursor: pointer; background: linear-gradient(135deg, #FF8A3D, #FF5A1F); display: flex; align-items: center; justify-content: center; flex: none">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"></path></svg>
+</button>
+</form>
+<div style="max-width: 800px; margin: 8px auto 0; text-align: center; font-size: 12px; color: #6F7A8F">AI answers can be wrong. Verify safety-critical decisions against the cited NASA sources.</div>
+</div>
+</main>
+</div>
+</template><template id="tpl-Guidelines">
+
+<div style="font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif; color: #EEF1F7; background: #05070D; line-height: 1.6; position: relative; overflow: hidden">
+<div style="position: absolute; top: -300px; right: -200px; width: 900px; height: 700px; background: radial-gradient(closest-side, rgba(61, 220, 151, 0.12), rgba(77, 140, 255, 0.08) 50%, rgba(5, 7, 13, 0) 100%); pointer-events: none"></div>
+
+<header style="position: relative; padding: 20px 24px 0">
+<div style="max-width: 1200px; margin: 0 auto; padding: 10px 12px 10px 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; background: rgba(14, 18, 28, 0.7); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 999px; backdrop-filter: blur(14px)">
+<a href="Main.dc.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #FFFFFF; min-height: 44px">
+<span style="width: 34px; height: 34px; border-radius: 50%; background: radial-gradient(circle, #FFE3B0 0%, #FF7A2E 35%, rgba(77, 163, 255, 0.9) 62%, rgba(77, 163, 255, 0) 72%); box-shadow: 0 0 24px rgba(77, 163, 255, 0.5)"></span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 19px">Flame in Freefall</span>
+</a>
+<nav class="nav" aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 2px">
+<a href="Main.dc.html">Home</a>
+<a href="Dashboard.dc.html">Dashboard</a>
+<a href="Chat.dc.html">AI Chat</a>
+<a class="on" href="Guidelines.dc.html">Safety Guidelines</a>
+</nav>
+<a class="btn" href="Dashboard.dc.html" style="padding: 10px 20px; min-height: 44px">Launch app</a>
+</div>
+</header>
+
+<main style="position: relative; max-width: 1200px; margin: 0 auto; padding: 64px 24px 90px; display: flex; flex-direction: column; gap: 56px">
+
+<section style="display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-end; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 700px">
+<div style="display: inline-flex; align-self: flex-start; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; background: rgba(61, 220, 151, 0.1); border: 1px solid rgba(61, 220, 151, 0.25); color: #5FE3AA; font-size: 13px; font-weight: 600">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"></path></svg>
+AI-derived · evidence-linked
+</div>
+<h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(38px, 5.4vw, 64px); line-height: 1.04; letter-spacing: -0.03em">Fire safety guidelines for human spaceflight</h1>
+<p style="margin: 0; color: #A9B2C3; font-size: 18px; text-wrap: pretty">Twelve recommendations distilled from NASA microgravity combustion research. Each one links to the experiments that support it.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; min-width: 260px; flex: 0 1 320px; padding: 20px; border-radius: 20px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08)">
+<div style="display: flex; justify-content: space-between; font-size: 14px"><span style="color: #A9B2C3">Review progress</span><span style="font-weight: 700">{{done}} / {{total}}</span></div>
+<div style="height: 10px; border-radius: 999px; background: rgba(255, 255, 255, 0.07); overflow: hidden"><div style="height: 100%; width: {{pct}}; border-radius: 999px; background: linear-gradient(90deg, #22A971, #5FE3AA)"></div></div>
+<button class="btn" type="button" style="justify-content: center; margin-top: 6px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"></path></svg>Download checklist (PDF)</button>
+</div>
+</section>
+
+<section aria-label="Emergency response sequence" style="border-radius: 28px; padding: clamp(24px, 4vw, 40px); background: radial-gradient(ellipse at 0% 0%, rgba(255, 90, 31, 0.2), rgba(5, 7, 13, 0) 60%), #0B0F19; border: 1px solid rgba(255, 106, 40, 0.3); display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px">
+<div style="display: flex; align-items: center; gap: 12px">
+<span style="width: 44px; height: 44px; border-radius: 12px; background: #FF5A1F; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 16H3z"></path><path d="M12 10v4M12 17h.01"></path></svg></span>
+<h2 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(22px, 2.6vw, 30px)">If a fire starts: response sequence</h2>
+</div>
+<a href="Chat.dc.html" style="font-size: 15px; font-weight: 600; text-decoration: none">Ask AI why this order →</a>
+</div>
+<ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(190px, 100%), 1fr)); gap: 12px">
+<li style="padding: 20px; border-radius: 18px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 32px; line-height: 1; color: #FF7A2E">01</span>
+<span style="font-weight: 700; font-size: 17px">Stop the airflow</span>
+<span style="font-size: 14px; color: #A9B2C3">Shut off ventilation in the affected module.</span>
+</li>
+<li style="padding: 20px; border-radius: 18px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 32px; line-height: 1; color: #FF7A2E">02</span>
+<span style="font-weight: 700; font-size: 17px">Cut the power</span>
+<span style="font-size: 14px; color: #A9B2C3">Isolate the affected rack or device.</span>
+</li>
+<li style="padding: 20px; border-radius: 18px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 32px; line-height: 1; color: #FF7A2E">03</span>
+<span style="font-weight: 700; font-size: 17px">Extinguish</span>
+<span style="font-size: 14px; color: #A9B2C3">CO₂ or water mist, aimed at the source.</span>
+</li>
+<li style="padding: 20px; border-radius: 18px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 32px; line-height: 1; color: #FF7A2E">04</span>
+<span style="font-weight: 700; font-size: 17px">Watch for re-ignition</span>
+<span style="font-size: 14px; color: #A9B2C3">Invisible cool flames can persist.</span>
+</li>
+<li style="padding: 20px; border-radius: 18px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 32px; line-height: 1; color: #FF7A2E">05</span>
+<span style="font-weight: 700; font-size: 17px">Clear the air</span>
+<span style="font-size: 14px; color: #A9B2C3">Masks on; monitor CO, O₂ and pressure.</span>
+</li>
+</ol>
+</section>
+
+<section aria-label="Guidelines" style="display: flex; flex-direction: column; gap: 24px">
+<div role="tablist" aria-label="Guideline category" style="display: flex; flex-wrap: wrap; gap: 6px; padding: 6px; border-radius: 999px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); align-self: flex-start; max-width: 100%; box-sizing: border-box">
+<sc-for list="{{tabs}}" as="t" hint-placeholder-count="5">
+<button class="tab" type="button" role="tab" aria-selected="{{t.on}}" onClick="{{t.pick}}" style="font: inherit; font-size: 15px; font-weight: 600; padding: 10px 18px; min-height: 44px; border-radius: 999px; border: 0; cursor: pointer; background: {{t.bg}}; color: {{t.fg}}">{{t.label}} <span style="opacity: 0.6; font-weight: 500">{{t.n}}</span></button>
+</sc-for>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 18px">
+<sc-for list="{{items}}" as="g" hint-placeholder-count="6">
+<article class="gcard" style="border-radius: 22px; padding: 24px; background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015)); border: 1px solid rgba(255, 255, 255, 0.08); display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 10px">
+<span style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: {{g.color}}"><span style="width: 32px; height: 32px; border-radius: 10px; background: {{g.tint}}; display: inline-flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700">{{g.code}}</span>{{g.catLabel}}</span>
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.04em; padding: 4px 10px; border-radius: 999px; background: {{g.pbg}}; color: {{g.pfg}}">{{g.priority}}</span>
+</div>
+<h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 21px; line-height: 1.25">{{g.title}}</h3>
+<p style="margin: 0; font-size: 15px; color: #A9B2C3; flex: 1">{{g.body}}</p>
+<div style="display: flex; flex-wrap: wrap; gap: 6px; align-items: center">
+<span style="font-size: 12px; font-weight: 600; color: #6F7A8F; letter-spacing: 0.06em">EVIDENCE</span>
+<sc-for list="{{g.evidence}}" as="ev" hint-placeholder-count="2">
+<a href="Dashboard.dc.html" style="font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: rgba(77, 140, 255, 0.12); color: #9DCBFF; text-decoration: none">{{ev}}</a>
+</sc-for>
+</div>
+<button class="check" type="button" aria-pressed="{{g.pressed}}" onClick="{{g.toggle}}" style="display: flex; align-items: center; gap: 10px; font: inherit; font-size: 14px; font-weight: 600; color: {{g.cfg}}; padding: 10px 12px; min-height: 44px; border-radius: 12px; cursor: pointer; border: 1px solid {{g.cbd}}; background: {{g.cbg}}">
+<span style="width: 20px; height: 20px; border-radius: 6px; border: 1.5px solid {{g.cfg}}; background: {{g.boxbg}}; display: inline-flex; align-items: center; justify-content: center; flex: none">
+<sc-if value="{{g.done}}" hint-placeholder-val="{{ false }}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#04140C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg></sc-if>
+</span>
+{{g.checkLabel}}
+</button>
+</article>
+</sc-for>
+</div>
+</section>
+
+<section style="border-radius: 24px; padding: 28px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 4px; max-width: 640px">
+<div style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 20px">Not sure how a guideline applies to your mission?</div>
+<div style="color: #A9B2C3; font-size: 15px">These recommendations support, not replace, NASA standards and flight rules. Ask the assistant to explain the evidence.</div>
+</div>
+<a class="btn" href="Chat.dc.html">Ask the AI</a>
+</section>
+</main>
+
+<footer style="position: relative; border-top: 1px solid rgba(255, 255, 255, 0.06)">
+<div style="max-width: 1200px; margin: 0 auto; padding: 32px 24px 48px; display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; color: #8E98AB; font-size: 14px">
+<div>Built by [TEAM NAME] for the NASA Space Apps Challenge. Not an official NASA product.</div>
+<div style="display: flex; gap: 18px; flex-wrap: wrap"><a href="https://psi.nasa.gov">NASA PSI</a><a href="https://ntrs.nasa.gov">NASA NTRS</a></div>
+</div>
+</footer>
+</div>
+</template>
+<script>
+var PAGE_STYLES={"Main": "\nbody{margin:0;background:#05070D}\na{color:#FF8A4C}a:hover{color:#FFB38A}\n.stars{background-image:radial-gradient(1px 1px at 40px 60px,rgba(255,255,255,.55),transparent),radial-gradient(1px 1px at 180px 140px,rgba(255,255,255,.35),transparent),radial-gradient(1.5px 1.5px at 300px 40px,rgba(255,255,255,.5),transparent),radial-gradient(1px 1px at 360px 260px,rgba(255,255,255,.3),transparent),radial-gradient(1px 1px at 90px 320px,rgba(255,255,255,.4),transparent),radial-gradient(1.5px 1.5px at 240px 380px,rgba(160,200,255,.5),transparent);background-size:420px 420px}\n.nav a{color:#C3CAD8;text-decoration:none;padding:10px 16px;border-radius:999px;font-size:15px;font-weight:500;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center;transition:all .2s}\n.nav a:hover{color:#FFFFFF;background:rgba(255,255,255,.06)}\n.nav a.on{color:#FFFFFF;background:rgba(255,255,255,.1)}\n.btn{background:linear-gradient(135deg,#FF8A3D,#FF5A1F);color:#FFFFFF;text-decoration:none;font-weight:600;padding:14px 26px;border-radius:999px;min-height:50px;box-sizing:border-box;display:inline-flex;align-items:center;gap:10px;box-shadow:0 10px 30px -10px rgba(255,100,40,.7);transition:transform .2s,box-shadow .2s}\n.btn:hover{color:#FFFFFF;transform:translateY(-2px);box-shadow:0 16px 40px -12px rgba(255,100,40,.9)}\n.btn2{color:#FFFFFF;text-decoration:none;font-weight:600;padding:14px 26px;border-radius:999px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04);min-height:50px;box-sizing:border-box;display:inline-flex;align-items:center;gap:10px;transition:background .2s}\n.btn2:hover{color:#FFFFFF;background:rgba(255,255,255,.1)}\n.card{transition:transform .25s,border-color .25s}\n.card:hover{transform:translateY(-4px);border-color:rgba(255,138,76,.45) !important}\n.grad{background:linear-gradient(90deg,#FFB067,#FF5A1F 45%,#7DB8FF);-webkit-background-clip:text;background-clip:text;color:transparent}\n@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.06);opacity:.85}}\n@keyframes spin{to{transform:rotate(360deg)}}\n@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}\n.flame{animation:pulse 3.2s ease-in-out infinite}\n.orbit{animation:spin 26s linear infinite}\n.orbit2{animation:spin 40s linear infinite reverse}\n.float{animation:float 5s ease-in-out infinite}\n.float2{animation:float 6s ease-in-out infinite .8s}\n@media (prefers-reduced-motion:reduce){.flame,.orbit,.orbit2,.float,.float2{animation:none}}\n", "Dashboard": "\nbody{margin:0;background:#05070D}\na{color:#FF8A4C}a:hover{color:#FFB38A}\n.side a{color:#A9B2C3;text-decoration:none;display:flex;align-items:center;gap:12px;padding:11px 14px;border-radius:12px;font-size:15px;font-weight:500;min-height:44px;box-sizing:border-box;transition:all .2s}\n.side a:hover{background:rgba(255,255,255,.05);color:#FFFFFF}\n.side a.on{background:linear-gradient(90deg,rgba(255,106,40,.18),rgba(255,106,40,.04));color:#FFFFFF}\n.row{transition:background .15s}\n.row:hover{background:rgba(255,255,255,.04) !important}\n.chip{transition:all .15s}\n.chip:hover{border-color:rgba(255,255,255,.3) !important}\n.btn{background:linear-gradient(135deg,#FF8A3D,#FF5A1F);color:#FFFFFF;text-decoration:none;font-weight:600;padding:12px 20px;border-radius:12px;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center;gap:8px;border:0;font-family:inherit;font-size:15px;cursor:pointer;box-shadow:0 8px 24px -10px rgba(255,100,40,.8)}\n.btn:hover{color:#FFFFFF;filter:brightness(1.08)}\n.btn2{color:#EEF1F7;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center;gap:8px;font-family:inherit;font-size:15px;cursor:pointer}\n.btn2:hover{background:rgba(255,255,255,.08)}\n.panel{background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:20px}\ninput:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid #7DB8FF;outline-offset:2px}\n", "Chat": "\nbody{margin:0;background:#05070D}\na{color:#FF8A4C}a:hover{color:#FFB38A}\n.hist a,.hist button.h{color:#A9B2C3;text-decoration:none;display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;font-size:14px;min-height:44px;box-sizing:border-box;background:transparent;border:0;font-family:inherit;text-align:left;cursor:pointer;width:100%}\n.hist a:hover,.hist button.h:hover{background:rgba(255,255,255,.05);color:#FFFFFF}\n.sugg{transition:all .2s}\n.sugg:hover{border-color:rgba(255,138,76,.5) !important;background:rgba(255,106,40,.06) !important;transform:translateY(-2px)}\n.send:hover{filter:brightness(1.1)}\n@keyframes blink{0%,80%,100%{opacity:.25}40%{opacity:1}}\n.dot{animation:blink 1.2s infinite}\n.dot2{animation:blink 1.2s infinite .2s}\n.dot3{animation:blink 1.2s infinite .4s}\n@media (max-width:760px){.hist{display:none !important}}\ninput:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid #7DB8FF;outline-offset:2px}\n", "Guidelines": "\nbody{margin:0;background:#05070D}\na{color:#FF8A4C}a:hover{color:#FFB38A}\n.nav a{color:#C3CAD8;text-decoration:none;padding:10px 16px;border-radius:999px;font-size:15px;font-weight:500;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center;transition:all .2s}\n.nav a:hover{color:#FFFFFF;background:rgba(255,255,255,.06)}\n.nav a.on{color:#FFFFFF;background:rgba(255,255,255,.1)}\n.btn{background:linear-gradient(135deg,#FF8A3D,#FF5A1F);color:#FFFFFF;text-decoration:none;font-weight:600;padding:12px 22px;border-radius:999px;min-height:46px;box-sizing:border-box;display:inline-flex;align-items:center;gap:8px;border:0;font-family:inherit;font-size:15px;cursor:pointer;box-shadow:0 10px 30px -10px rgba(255,100,40,.7)}\n.btn:hover{color:#FFFFFF;filter:brightness(1.08)}\n.tab{transition:all .15s}\n.tab:hover{color:#FFFFFF !important}\n.gcard{transition:transform .25s,border-color .25s}\n.gcard:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.18) !important}\n.check:hover{border-color:rgba(255,255,255,.3) !important}\ninput:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid #7DB8FF;outline-offset:2px}\n"};
+function DCLogic(props){this.props=props||{};this.state={};}
+DCLogic.prototype.setState=function(p){Object.assign(this.state,typeof p==='function'?p(this.state):p);if(this.__r)this.__r();};
+DCLogic.prototype.forceUpdate=function(){if(this.__r)this.__r();};
+var HOLE=/\{\{\s*([^}]+?)\s*\}\}/g;
+function look(path,scope){
+  if(path==='true')return true;if(path==='false')return false;if(path==='null')return null;
+  if(/^-?\d+(\.\d+)?$/.test(path))return Number(path);
+  var parts=path.split('.'),v=scope;
+  for(var i=0;i<parts.length;i++){if(v==null)return undefined;v=v[parts[i]];}
+  return v;
+}
+function whole(str){var m=/^\s*\{\{\s*([^}]+?)\s*\}\}\s*$/.exec(str);return m?m[1]:null;}
+function interp(str,scope){return str.replace(HOLE,function(_,p){var v=look(p,scope);return v==null?'':String(v);});}
+var EV={onclick:'click',onchange:'input',oninput:'input',onsubmit:'submit',onkeydown:'keydown'};
+function renderNodes(nodes,scope,out){for(var i=0;i<nodes.length;i++)renderNode(nodes[i],scope,out);}
+function renderNode(n,scope,out){
+  if(n.nodeType===3){out.appendChild(document.createTextNode(interp(n.nodeValue,scope)));return;}
+  if(n.nodeType!==1)return;
+  var tag=n.localName;
+  if(tag==='sc-for'){
+    var list=look(whole(n.getAttribute('list'))||'',scope)||[],as=n.getAttribute('as')||'item';
+    list.forEach(function(item,idx){var s=Object.create(scope);s[as]=item;s.$index=idx;renderNodes(n.childNodes,s,out);});return;
+  }
+  if(tag==='sc-if'){if(look(whole(n.getAttribute('value'))||'',scope))renderNodes(n.childNodes,scope,out);return;}
+  var el=n.cloneNode(false);
+  Array.prototype.slice.call(el.attributes).forEach(function(a){
+    var name=a.name,val=a.value;
+    if(name.indexOf('hint-')===0){el.removeAttribute(name);return;}
+    if(EV[name]){el.removeAttribute(name);var f=look(whole(val)||'',scope);if(typeof f==='function')el.addEventListener(EV[name],f);return;}
+    if(val.indexOf('{{')!==-1){
+      var w=whole(val),v=w?look(w,scope):interp(val,scope);
+      if(name==='value'){el.removeAttribute('value');el.__val=v==null?'':String(v);return;}
+      el.setAttribute(name,v==null?'':String(v));
+    }
+  });
+  if(el.__val!==undefined)el.value=el.__val;
+  renderNodes(n.childNodes,scope,el);
+  if(el.__val!==undefined)el.value=el.__val;
+  out.appendChild(el);
+}
+var inst={},current=null;
+function render(){
+  var c=inst[current],tpl=document.getElementById('tpl-'+current);
+  var ae=document.activeElement,fid=ae&&ae.id,ss=null;
+  try{if(fid&&ae.selectionStart!=null)ss=ae.selectionStart;}catch(e){}
+  var frag=document.createDocumentFragment();
+  renderNodes(tpl.content.childNodes,c.renderVals(),frag);
+  var app=document.getElementById('app');app.innerHTML='';app.appendChild(frag);
+  if(fid){var el=document.getElementById(fid);if(el){el.focus();try{if(ss!=null)el.setSelectionRange(ss,ss);}catch(e){}}}
+}
+function go(p,push){
+  if(!PAGES[p])p='Main';
+  current=p;document.getElementById('page-style').textContent=PAGE_STYLES[p];
+  if(!inst[p]){inst[p]=new PAGES[p]({});inst[p].__r=function(){if(current===p)render();};}
+  render();window.scrollTo(0,0);
+  if(push)history.pushState(null,'','#'+p.toLowerCase());
+}
+function fromHash(){var h=(location.hash||'').slice(1).toLowerCase();for(var k in PAGES)if(k.toLowerCase()===h)return k;return 'Main';}
+function boot(){
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;
+    var m=/^([A-Za-z]+)\.dc\.html$/.exec(a.getAttribute('href'));
+    if(m){e.preventDefault();go(m[1],true);}
+  });
+  window.addEventListener('popstate',function(){go(fromHash(),false);});
+  go(fromHash(),false);
+}
+
+var PAGES={};
+PAGES["Main"]=(function(){
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+
+return Component;})();
+PAGES["Dashboard"]=(function(){
+var FF_COLORS = { liquid: '#FF8A4C', solid: '#FFC15A', gas: '#7DB8FF', large: '#B9A5FF', ground: '#5FE3AA' };
+var FF_TINTS = { liquid: 'rgba(255,138,76,0.14)', solid: 'rgba(255,193,90,0.14)', gas: 'rgba(125,184,255,0.14)', large: 'rgba(185,165,255,0.14)', ground: 'rgba(95,227,170,0.14)' };
+var FF_LABELS = { liquid: 'Liquid droplets', solid: 'Solid materials', gas: 'Gaseous flames', large: 'Large-scale', ground: 'Ground tests' };
+var FF_DATA = [
+  { id: 'flex', name: 'FLEX', full: 'Flame Extinguishment Experiment', platform: 'ISS · Combustion Integrated Rack', cat: 'liquid', start: 2009, end: 2012, years: '2009–2012',
+    fuels: 'heptane methanol droplet suppressant',
+    summary: 'Burned free-floating fuel droplets to see how flames die out and how well diluent gases such as CO₂ and helium suppress them.',
+    findings: ['Heptane droplets kept burning as an invisible, low-temperature “cool flame” after the hot flame went out.', 'Suppressant performance in microgravity differs from what 1 g tests suggest.'],
+    implication: 'Visible extinction is not proof the fire is out. Keep monitoring temperature and gas species after suppression.' },
+  { id: 'flex2', name: 'FLEX-2', full: 'Flame Extinguishment Experiment 2', platform: 'ISS · Combustion Integrated Rack', cat: 'liquid', start: 2012, end: 2016, years: '2012–2016',
+    fuels: 'fuel mixtures droplet arrays soot',
+    summary: 'Studied burning of fuel mixtures and droplet pairs and arrays, including soot formation and how neighboring droplets interact.',
+    findings: ['Mixtures burn differently from pure fuels as volatile components boil off first.', 'Flame spread between droplets depends strongly on their spacing.'],
+    implication: 'Treat leaks and sprays as interacting droplet clouds, not single drops, when modelling fire spread.' },
+  { id: 'bass', name: 'BASS / BASS-II', full: 'Burning and Suppression of Solids', platform: 'ISS · Microgravity Science Glovebox', cat: 'solid', start: 2011, end: 2016, years: '2011–2016',
+    fuels: 'acrylic pmma fabric paper solids',
+    summary: 'Burned small samples of solid materials — acrylic, fabrics, paper — in a controlled low-speed airflow and tested suppression.',
+    findings: ['Flames on solids survived at very low airflow speeds.', 'Some samples burned at oxygen levels that normal-gravity tests would rate as safe.'],
+    implication: '1 g flammability screening is not always conservative for low-flow microgravity cabins.' },
+  { id: 'saffire', name: 'Saffire I–VI', full: 'Spacecraft Fire Safety Experiment', platform: 'Cygnus cargo vehicle', cat: 'large', start: 2016, end: 2021, years: '2016–2021',
+    fuels: 'cotton fiberglass sibal nomex pmma large scale cygnus',
+    summary: 'Large-scale fires lit inside uncrewed Cygnus vehicles after they left the ISS — the closest test yet to a real spacecraft fire.',
+    findings: ['First observations of flame spread over spacecraft-scale (≈1 m) samples in microgravity.', 'Measured how a growing fire changes cabin oxygen, pressure and combustion products.'],
+    implication: 'Validated the models used to size fire detection and suppression for crewed vehicles.' },
+  { id: 'acme', name: 'ACME', full: 'Advanced Combustion via Microgravity Experiments', platform: 'ISS · Combustion Integrated Rack', cat: 'gas', start: 2017, end: 2020, years: '2017–2020',
+    fuels: 'gaseous flames soot electric field ethylene methane',
+    summary: 'Five studies of gaseous flames free of buoyancy, covering soot formation, flame stability and the effect of electric fields.',
+    findings: ['Measured soot formation and extinction limits for non-premixed gas flames.', 'Produced benchmark data for combustion models.'],
+    implication: 'Better soot and smoke predictions help design detectors for electrical and gas fires.' },
+  { id: 'sofie', name: 'SoFIE', full: 'Solid Fuel Ignition and Extinction', platform: 'ISS · Combustion Integrated Rack', cat: 'solid', start: 2023, end: 2026, years: '2023–now',
+    fuels: 'solid ignition extinction pressure oxygen exploration atmosphere',
+    summary: 'Ignition, growth and extinction of solid materials across the oxygen and pressure levels planned for exploration vehicles.',
+    findings: ['Maps ignition and extinction limits at reduced pressure and elevated oxygen.', 'Ongoing campaign — results still being published.'],
+    implication: 'Directly informs material limits for the 34% O₂ / 8.2 psia exploration atmosphere.' },
+  { id: 'drop', name: 'Drop towers', full: 'Zero Gravity Research Facility & 2.2 s Drop Tower', platform: 'NASA Glenn (ground)', cat: 'ground', start: 2008, end: 2026, years: '1966–now',
+    fuels: 'drop tower ground ignition short duration glenn',
+    summary: 'Seconds-long free-fall tests used to study ignition, early flame shape and spread before committing to flight hardware.',
+    findings: ['Up to about 5 seconds of microgravity per drop.', 'Fast, low-cost way to screen ideas and materials.'],
+    implication: 'Use for rapid material screening, then confirm long-duration behavior in orbit.' }
+];
+class Component extends DCLogic {
+  constructor(...args) {
+    super(...args);
+    this.state = { cat: 'all', q: '', sel: 'flex' };
+  }
+  renderVals() {
+    var self = this;
+    var cat = this.state.cat;
+    var q = (this.state.q || '').trim().toLowerCase();
+    var sel = this.state.sel;
+    var catList = [['all', 'All'], ['liquid', 'Liquid droplets'], ['solid', 'Solid materials'], ['gas', 'Gaseous flames'], ['large', 'Large-scale'], ['ground', 'Ground tests']];
+    var cats = catList.map(function (c) {
+      var on = c[0] === cat;
+      return { label: c[1], pressed: on ? 'true' : 'false', bg: on ? '#FFFFFF' : 'rgba(255,255,255,0.03)', fg: on ? '#05070D' : '#C3CAD8', bd: on ? '#FFFFFF' : 'rgba(255,255,255,0.12)', pick: function () { self.setState({ cat: c[0] }); } };
+    });
+    var filtered = FF_DATA.filter(function (e) {
+      var hay = (e.name + ' ' + e.full + ' ' + e.platform + ' ' + e.fuels).toLowerCase();
+      return (cat === 'all' || e.cat === cat) && (q === '' || hay.indexOf(q) !== -1);
+    });
+    var rows = filtered.map(function (e) {
+      var on = e.id === sel;
+      return Object.assign({}, e, { catLabel: FF_LABELS[e.cat], color: FF_COLORS[e.cat], tint: FF_TINTS[e.cat], pressed: on ? 'true' : 'false', bg: on ? 'rgba(255,106,40,0.08)' : 'transparent', bl: on ? '#FF6A28' : 'transparent', pick: function () { self.setState({ sel: e.id }); } });
+    });
+    var det = FF_DATA.filter(function (e) { return e.id === sel; })[0] || FF_DATA[0];
+    var d = Object.assign({}, det, { catLabel: FF_LABELS[det.cat], color: FF_COLORS[det.cat], tint: FF_TINTS[det.cat] });
+    var span = 19;
+    var bars = FF_DATA.map(function (e) {
+      return { name: e.name, color: FF_COLORS[e.cat], left: ((e.start - 2008) / span * 100) + '%', width: ((e.end - e.start + 1) / span * 100) + '%', opacity: e.id === sel ? '1' : '0.55' };
+    });
+    var ticks = [2010, 2014, 2018, 2022, 2026].map(function (y) { return { label: String(y), left: ((y - 2008 + 0.5) / span * 100) + '%' }; });
+    var keys = ['liquid', 'solid', 'gas', 'large', 'ground'];
+    var acc = 0, parts = [];
+    var legend = keys.map(function (k) {
+      var n = FF_DATA.filter(function (e) { return e.cat === k; }).length;
+      var a0 = acc / FF_DATA.length * 360; acc += n; var a1 = acc / FF_DATA.length * 360;
+      parts.push(FF_COLORS[k] + ' ' + (a0 + 1) + 'deg ' + a1 + 'deg');
+      return { label: FF_LABELS[k], color: FF_COLORS[k], n: n };
+    });
+    var donut = 'conic-gradient(#0B0F19 0deg 1deg, ' + parts.join(', ') + ')';
+    return {
+      cats: cats, rows: rows, noRows: rows.length === 0, d: d, bars: bars, ticks: ticks, legend: legend, donut: donut, total: FF_DATA.length, q: this.state.q,
+      onQ: function (ev) { self.setState({ q: ev.target.value }); }
+    };
+  }
+}
+
+return Component;})();
+PAGES["Chat"]=(function(){
+var FF_KB = [
+  { keys: ['blue', 'sphere', 'spherical', 'shape', 'round', 'look'],
+    text: 'In microgravity there is no buoyancy, so hot combustion gases don’t rise and fresh air isn’t pulled in from below. Oxygen reaches the flame only by slow diffusion from every direction — which is why the flame forms a sphere around the fuel.\n\nThey look blue and dim because the flame produces less glowing soot. That matters for safety: a microgravity fire can be harder to see than one on Earth.',
+    sources: ['FLEX', 'Drop towers'] },
+  { keys: ['cool', 'invisible', 'heptane', 'flex'],
+    text: 'Cool flames are a low-temperature burning mode. During FLEX on the ISS, heptane droplets kept burning after the bright hot flame went out — the reaction continued at much lower temperature, with almost no visible light.\n\nWhy it matters:\n• A fire can look extinguished while chemistry is still running.\n• Re-ignition is possible if conditions change.\n• Detection should combine gas sensing and temperature, not cameras alone.',
+    sources: ['FLEX', 'FLEX-2'] },
+  { keys: ['6001', 'test 1', 'standard', 'screen', 'material', 'flammab'],
+    text: 'Not always. NASA-STD-6001 Test 1 is an upward-burning test in normal gravity, where buoyant flow is strong. Microgravity experiments showed some materials can keep burning in gentle, low-speed flow at oxygen levels that a 1 g test would rate as safe.\n\nRecommendation: keep Test 1 for screening, but add margin for low-flow microgravity, and re-test materials at the oxygen level of the target cabin atmosphere.',
+    sources: ['BASS / BASS-II', 'SoFIE'] },
+  { keys: ['crew', 'first', 'respond', 'extinguish', 'suppress', 'what should', 'do if'],
+    text: 'The evidence points to this order:\n1. Shut off ventilation in the affected module — airflow feeds microgravity flames.\n2. Remove power from the affected rack or equipment.\n3. Apply a portable extinguisher (CO₂ or water mist) at the source.\n4. Keep monitoring for re-ignition — flames can persist invisibly.\n5. Track CO, oxygen and pressure, and don masks until the air is cleared.',
+    sources: ['BASS / BASS-II', 'Saffire I–VI', 'FLEX'] },
+  { keys: ['saffire', 'cygnus', 'large', 'big'],
+    text: 'Saffire lit large fires inside uncrewed Cygnus cargo vehicles after they departed the ISS — the first spacecraft-scale fire tests in microgravity, using samples around a meter long.\n\nKey lessons:\n• Flames spread steadily across large samples in cabin-like airflow.\n• A fire measurably raises pressure and changes oxygen and combustion products in a closed vehicle.\n• The data validated the models used to size detection and suppression.',
+    sources: ['Saffire I–VI'] },
+  { keys: ['moon', 'lunar', 'mars', 'artemis', '34', 'exploration', 'partial', 'gravity'],
+    text: 'Two things change on Artemis-era missions:\n• Atmosphere — the proposed exploration atmosphere is 8.2 psia with 34% oxygen. Higher oxygen fraction makes most materials ignite and spread more easily.\n• Gravity — on the Moon (0.16 g) and Mars (0.38 g), buoyant flow is weak but present. Studies suggest some materials can be more flammable at partial gravity than in either 1 g or microgravity.\n\nMaterials approved for the ISS should be re-evaluated for these conditions.',
+    sources: ['SoFIE', 'BASS / BASS-II'] }
+];
+var FF_FALLBACK = { text: 'I couldn’t find a strong match in the indexed experiments for that question. Try asking about flame shape, cool flames, material screening, crew response, Saffire, or Moon and Mars conditions.', sources: ['Experiment catalog'] };
+var FF_SUGG = [
+  { title: 'Why are flames spherical and blue?', sub: 'Flame shape without gravity' },
+  { title: 'What are cool flames?', sub: 'Invisible burning seen in FLEX' },
+  { title: 'What should the crew do first if a fire starts?', sub: 'Response sequence' },
+  { title: 'How do Moon and Mars missions change fire risk?', sub: 'Exploration atmosphere & partial gravity' }
+];
+var FF_RECENT = ['Is NASA-STD-6001 Test 1 conservative?', 'What did Saffire teach us?', 'Why are flames spherical and blue?', 'What are cool flames?'];
+class Component extends DCLogic {
+  constructor(...args) {
+    super(...args);
+    this.state = { messages: [], draft: '', typing: false };
+  }
+  
+async ask(text) {
+  var t = (text || "").trim();
+  if (!t || this.state.typing) return;
+
+  this.setState({
+    messages: this.state.messages.concat([
+      { role: "user", text: t }
+    ]),
+    draft: "",
+    typing: true
+  });
+
+  try {
+    var res = await fetch("http://127.0.0.1:8000/ask", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ question: t })
+    });
+
+    var data = await res.json();
+
+    if (!res.ok) {
+      throw new Error(
+        typeof data.detail === "string"
+          ? data.detail
+          : "Backend error: " + res.status
+      );
+    }
+
+    var sections = [];
+
+sections.push(
+  "RESEARCH ANSWER\n" + (data.answer || "No answer available.")
+);
+
+if (Array.isArray(data.experimental_evidence) &&
+    data.experimental_evidence.length) {
+  sections.push(
+    "EXPERIMENTAL EVIDENCE\n" +
+    data.experimental_evidence.map(function (e) {
+      return e.experiment_id +
+        " | Source: " + (e.source || "Unknown") +
+        " | Oxygen: " +
+        (e.oxygen_concentration == null
+          ? "Not recorded"
+          : e.oxygen_concentration + "%") +
+        "\n" + (e.finding || "");
+    }).join("\n\n")
+  );
+}
+
+var predictions = Array.isArray(data.prediction)
+  ? data.prediction
+  : data.prediction ? [data.prediction] : [];
+
+if (predictions.length) {
+  sections.push(
+    "ML FIRE PREDICTIONS\n" +
+    predictions.map(function (p) {
+      return p.experiment_id +
+        " | Prediction: " + (p.label || "Unknown") +
+        " | Fire probability: " +
+        (typeof p.probability === "number"
+          ? (p.probability * 100).toFixed(2) + "%"
+          : "Unavailable") +
+        " | Risk: " + (p.riskBand || "Unknown");
+    }).join("\n")
+  );
+}
+
+if (Array.isArray(data.observed_trends) && data.observed_trends.length) {
+  sections.push("OBSERVED TRENDS\n• " + data.observed_trends.join("\n• "));
+}
+
+if (data.interpretation) {
+  sections.push("INTERPRETATION\n" + data.interpretation);
+}
+
+if (data.safety_insight) {
+  sections.push("SAFETY INSIGHT\n" + data.safety_insight);
+}
+
+if (Array.isArray(data.limitations) && data.limitations.length) {
+  sections.push("LIMITATIONS\n• " + data.limitations.join("\n• "));
+}
+
+if (Array.isArray(data.sources) && data.sources.length) {
+  sections.push("SOURCES\n" + data.sources.join(", "));
+}
+
+if (data.answerability && data.answerability.answerable === false) {
+  sections.push(
+    "EVIDENCE WARNING\nThe retrieved evidence may not fully answer this question."
+  );
+}
+
+
+var answerText = sections.join("\n\n");
+    var sources = Array.isArray(data.sources)
+     ? data.sources
+     : [];
+
+    this.setState({
+      messages: this.state.messages.concat([
+        {
+          role: "ai",
+          text: answerText,
+          sources: Array.isArray(sources) ? sources : []
+        }
+      ]),
+      typing: false
+    });
+
+  } catch (err) {
+    this.setState({
+      messages: this.state.messages.concat([
+        {
+          role: "ai",
+          text: "Could not connect to RAG backend: " +
+            (err.message || "Check that FastAPI is running."),
+          sources: []
+        }
+      ]),
+      typing: false
+    });
+  }
+}
+
+  renderVals() {
+    var self = this;
+    return {
+      empty: this.state.messages.length === 0 && !this.state.typing,
+      typing: this.state.typing,
+      draft: this.state.draft,
+      messages: this.state.messages.map(function (m) { return { text: m.text, sources: m.sources || [], isUser: m.role === 'user', isAI: m.role === 'ai' }; }),
+      suggestions: FF_SUGG.map(function (s) { return { title: s.title, sub: s.sub, ask: function () { self.ask(s.title); } }; }),
+      recent: FF_RECENT.map(function (r) { return { title: r, ask: function () { self.ask(r); } }; }),
+      onDraft: function (e) { self.setState({ draft: e.target.value }); },
+      onSubmit: function (e) { e.preventDefault(); self.ask(self.state.draft); },
+      reset: function () { self.setState({ messages: [], draft: '', typing: false }); }
+    };
+  }
+}
+
+return Component;})();
+PAGES["Guidelines"]=(function(){
+var FG_CATS = {
+  prevent: { label: 'Prevention', color: '#FF8A4C', tint: 'rgba(255,138,76,0.15)', code: 'P' },
+  detect: { label: 'Detection', color: '#7DB8FF', tint: 'rgba(125,184,255,0.15)', code: 'D' },
+  suppress: { label: 'Suppression', color: '#5FE3AA', tint: 'rgba(95,227,170,0.14)', code: 'S' },
+  design: { label: 'Mission design', color: '#B9A5FF', tint: 'rgba(185,165,255,0.15)', code: 'M' }
+};
+var FG_PRI = {
+  Critical: { bg: 'rgba(255,90,31,0.18)', fg: '#FFA477' },
+  High: { bg: 'rgba(255,193,90,0.15)', fg: '#FFD27F' },
+  Medium: { bg: 'rgba(255,255,255,0.08)', fg: '#C3CAD8' }
+};
+var FG_DATA = [
+  { id: 'p1', cat: 'prevent', priority: 'Critical', title: 'Test materials in the target cabin atmosphere', body: 'Re-screen materials at the mission’s worst-case oxygen and pressure — such as 34% O₂ at 8.2 psia — not only at ISS conditions.', evidence: ['SoFIE', 'BASS'] },
+  { id: 'p2', cat: 'prevent', priority: 'High', title: 'Don’t treat a 1 g pass as proof of safety', body: 'Add margin to NASA-STD-6001 Test 1 results for low-flow microgravity, where some materials burned below 1 g limits.', evidence: ['BASS / BASS-II'] },
+  { id: 'p3', cat: 'prevent', priority: 'High', title: 'Limit thin, flammable materials', body: 'Thin fabrics, foams and paper ignite and spread fastest. Minimize, enclose or replace them near ignition sources.', evidence: ['Saffire', 'BASS'] },
+  { id: 'p4', cat: 'prevent', priority: 'Medium', title: 'Contain fluid leaks and transfers', body: 'Leaked fuels form floating droplets and clouds that burn differently from pure fuels. Contain transfers and capture spills.', evidence: ['FLEX-2'] },
+  { id: 'd1', cat: 'detect', priority: 'Critical', title: 'Don’t rely on seeing the flame', body: 'Microgravity flames are dim and blue, and cool flames are nearly invisible. Pair cameras with gas and temperature sensors.', evidence: ['FLEX'] },
+  { id: 'd2', cat: 'detect', priority: 'High', title: 'Monitor gases and cabin pressure', body: 'Track carbon monoxide, oxygen drop and pressure rise — Saffire showed all three shift measurably during a fire.', evidence: ['Saffire'] },
+  { id: 'd3', cat: 'detect', priority: 'High', title: 'Validate smoke detectors in microgravity', body: 'Soot and smoke form differently without gravity. Confirm detector response using flight data, not 1 g tests alone.', evidence: ['ACME', 'Saffire'] },
+  { id: 's1', cat: 'suppress', priority: 'Critical', title: 'Shut off ventilation first', body: 'Gentle airflow is the most hazardous condition for solid fuels. Removing it lets the flame starve of oxygen.', evidence: ['BASS', 'Saffire'] },
+  { id: 's2', cat: 'suppress', priority: 'Critical', title: 'Assume re-ignition is possible', body: 'After visible extinction, keep monitoring and be ready to re-apply suppressant.', evidence: ['FLEX'] },
+  { id: 's3', cat: 'suppress', priority: 'High', title: 'Use suppressants proven in orbit', body: 'Diluent gases perform differently in microgravity. Prefer agents and concentrations validated in flight.', evidence: ['FLEX'] },
+  { id: 'm1', cat: 'design', priority: 'High', title: 'Re-evaluate for Moon and Mars gravity', body: 'Some materials may be more flammable at partial gravity (0.16 g, 0.38 g) than in 1 g or microgravity. Test for it.', evidence: ['Partial-g studies'] },
+  { id: 'm2', cat: 'design', priority: 'Medium', title: 'Design for pressure rise', body: 'A fire in a sealed volume raises pressure. Size relief paths and module isolation accordingly.', evidence: ['Saffire'] }
+];
+
+function formatRagAnswer(data) {
+  if (!data || typeof data !== "object") {
+    return String(data || "");
+  }
+
+  var sections = [];
+
+  sections.push("RESEARCH ANSWER\n" + (data.answer || "No answer available."));
+
+  if (data.experimental_evidence && data.experimental_evidence.length) {
+    sections.push(
+      "EXPERIMENTAL EVIDENCE\n" +
+      data.experimental_evidence.map(function (e) {
+        return (
+          e.experiment_id +
+          " | Source: " + (e.source || "Unknown") +
+          " | Oxygen: " +
+          (e.oxygen_concentration == null
+            ? "Not recorded"
+            : e.oxygen_concentration + "%") +
+          "\n" + (e.finding || "")
+        );
+      }).join("\n\n")
+    );
+  }
+
+  if (data.prediction) {
+    var predictions = Array.isArray(data.prediction)
+      ? data.prediction
+      : [data.prediction];
+
+    sections.push(
+      "ML FIRE PREDICTIONS\n" +
+      predictions.map(function (p) {
+        return (
+          p.experiment_id +
+          " | Prediction: " + (p.label || "Unavailable") +
+          " | Fire probability: " +
+          (typeof p.probability === "number"
+            ? (p.probability * 100).toFixed(2) + "%"
+            : "Unavailable") +
+          " | Risk: " + (p.riskBand || "Unavailable") +
+          " | Model: " + (p.model || "Unknown")
+        );
+      }).join("\n")
+    );
+  }
+
+  if (data.observed_trends && data.observed_trends.length) {
+    sections.push(
+      "OBSERVED TRENDS\n• " + data.observed_trends.join("\n• ")
+    );
+  }
+
+  if (data.interpretation) {
+    sections.push("INTERPRETATION\n" + data.interpretation);
+  }
+
+  if (data.safety_insight) {
+    sections.push("SAFETY INSIGHT\n" + data.safety_insight);
+  }
+
+  if (data.limitations && data.limitations.length) {
+    sections.push(
+      "LIMITATIONS\n• " + data.limitations.join("\n• ")
+    );
+  }
+
+  if (data.sources && data.sources.length) {
+    sections.push("SOURCES\n" + data.sources.join(", "));
+  }
+
+  if (data.answerability && data.answerability.answerable === false) {
+    sections.push(
+      "EVIDENCE WARNING\nThe system could not confidently establish " +
+      "that the retrieved evidence fully answers this question."
+    );
+  }
+
+
+
+  return sections.join("\n\n");
+}
+
+class Component extends DCLogic {
+  constructor(...args) {
+    super(...args);
+    this.state = { tab: 'all', done: {} };
+  }
+  renderVals() {
+    var self = this;
+    var tab = this.state.tab;
+    var doneMap = this.state.done;
+    var tabList = [['all', 'All'], ['prevent', 'Prevention'], ['detect', 'Detection'], ['suppress', 'Suppression'], ['design', 'Mission design']];
+    var tabs = tabList.map(function (t) {
+      var on = t[0] === tab;
+      var n = t[0] === 'all' ? FG_DATA.length : FG_DATA.filter(function (g) { return g.cat === t[0]; }).length;
+      return { label: t[1], n: n, on: on ? 'true' : 'false', bg: on ? '#FFFFFF' : 'transparent', fg: on ? '#05070D' : '#A9B2C3', pick: function () { self.setState({ tab: t[0] }); } };
+    });
+    var items = FG_DATA.filter(function (g) { return tab === 'all' || g.cat === tab; }).map(function (g) {
+      var c = FG_CATS[g.cat], p = FG_PRI[g.priority], d = !!doneMap[g.id];
+      return Object.assign({}, g, {
+        catLabel: c.label, color: c.color, tint: c.tint, code: c.code, pbg: p.bg, pfg: p.fg,
+        done: d, pressed: d ? 'true' : 'false', checkLabel: d ? 'Reviewed' : 'Mark as reviewed',
+        cfg: d ? '#5FE3AA' : '#A9B2C3', cbd: d ? 'rgba(95,227,170,0.35)' : 'rgba(255,255,255,0.1)', cbg: d ? 'rgba(95,227,170,0.08)' : 'transparent', boxbg: d ? '#5FE3AA' : 'transparent',
+        toggle: function () { var m = Object.assign({}, self.state.done); m[g.id] = !m[g.id]; self.setState({ done: m }); }
+      });
+    });
+    var doneCount = FG_DATA.filter(function (g) { return doneMap[g.id]; }).length;
+    return { tabs: tabs, items: items, done: doneCount, total: FG_DATA.length, pct: (doneCount / FG_DATA.length * 100) + '%' };
+  }
+}
+
+return Component;})();
+boot();
+</script>
+</body>
+</html>
