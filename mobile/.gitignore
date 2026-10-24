@@ -1,0 +1,86 @@
+*.log
+.DS_Store
+.env
+.env.backup
+.env.production
+.phpactor.json
+.phpunit.result.cache
+/.codex
+/.cursor/
+/.idea
+/.nova
+/.phpunit.cache
+/.vscode
+/.zed
+/auth.json
+/node_modules
+/public/build
+/public/fonts-manifest.dev.json
+/public/hot
+/public/storage
+/storage/*.key
+/storage/pail
+/vendor
+_ide_helper.php
+Homestead.json
+Homestead.yaml
+Thumbs.db
+# Environment files
+.env.*
+!.env.example
+
+# Private keys and credentials
+*.pem
+*.key
+*.p12
+*.pfx
+service-account*.json
+auth.json
+
+# Local database and dumps
+*.sql
+*.sqlite
+*.sqlite3
+
+/storage/logs/*
+!/storage/logs/.gitignore
+/storage/framework/cache/data/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/bootstrap/cache/*.php
+firebase-credentials.json
+firebase-service-account.json
+serviceAccountKey.json
+google-services.json
+GoogleService-Info.plist
+.DS_Store
+# Firebase credentials and service accounts
+*firebase*credentials*.json
+*firebase*service*account*.json
+*serviceAccount*.json
+*service-account*.json
+*ServiceAccount*.json
+*firebase-adminsdk*.json
+
+# Private keys and certificates
+*.p8
+*.jks
+*.keystore
+*.crt
+*.cer
+/storage/app/firebase/
+# Environment files
+.env.*
+!.env.example
+Thumbs.db
+/.claude/
+/.mcp.json
+/CLAUDE.md
+/AGENTS.md
+/boost.json
+# Local AI tools and configuration
+/.claude/
+/.mcp.json
+/CLAUDE.md
+/AGENTS.md
+/boost.json
