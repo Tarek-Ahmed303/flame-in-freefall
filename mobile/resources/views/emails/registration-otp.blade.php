@@ -1,4 +1,3 @@
-
 {{-- resources/views/emails/registration-otp.blade.php --}}
 @php
     $otpDigits = str_split((string) $otp);
