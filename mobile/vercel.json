@@ -15,5 +15,10 @@
             "src": "/(.*)",
             "dest": "api/index.php"
         }
-    ]
+    ],
+    "build": {
+        "env": {
+            "COMPOSER_MEMORY_LIMIT": "-1"
+        }
+    }
 }
