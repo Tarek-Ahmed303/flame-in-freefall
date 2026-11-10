@@ -1,0 +1,86 @@
+{
+  "question": "How does oxygen concentration affect flame behavior and flame spread rate during combustion experiments in microgravity?",
+  "answer": "Oxygen concentration affects flame behavior and flame spread rate during combustion experiments in microgravity. Higher oxygen concentrations generally lead to faster flame spread rates and higher heat release rates, although the relationship is also influenced by other factors such as pressure and flow velocity.",
+  "experimental_evidence": [
+    {
+      "experiment_id": "EXP-0036",
+      "oxygen_concentration": 16.97,
+      "flame_temperature": null,
+      "source": "FLEX-2",
+      "finding": "Steady flame spread with a rate of 2.746 mm/s and a heat release rate of 1.906 kW."
+    },
+    {
+      "experiment_id": "EXP-0226",
+      "oxygen_concentration": 18.85,
+      "flame_temperature": null,
+      "source": "FLEX-2",
+      "finding": "Steady flame spread with a rate of 2.811 mm/s and a heat release rate of 2.027 kW."
+    }
+  ],
+  "prediction": [
+    {
+      "experiment_id": "EXP-0036",
+      "fire": true,
+      "label": "fire",
+      "probability": 0.8578,
+      "riskBand": "HIGH",
+      "threshold": 0.5,
+      "model": "random_forest",
+      "inputs": {
+        "oxygen_concentration_pct": 16.97,
+        "pressure_kpa": 85.5,
+        "flow_velocity_cm_s": 13.93,
+        "ambient_temperature_c": 27.4,
+        "material": "Nomex",
+        "material_type": "solid",
+        "flow_configuration": "concurrent"
+      },
+      "note": "Simulated-data model — research/educational, not certified safety guidance."
+    },
+    {
+      "experiment_id": "EXP-0226",
+      "fire": true,
+      "label": "fire",
+      "probability": 0.8274,
+      "riskBand": "HIGH",
+      "threshold": 0.5,
+      "model": "random_forest",
+      "inputs": {
+        "oxygen_concentration_pct": 18.85,
+        "pressure_kpa": 57.6,
+        "flow_velocity_cm_s": 34.1,
+        "ambient_temperature_c": 25.1,
+        "material": "Nomex",
+        "material_type": "solid",
+        "flow_configuration": "concurrent"
+      },
+      "note": "Simulated-data model — research/educational, not certified safety guidance."
+    }
+  ],
+  "observed_trends": [
+    "Higher oxygen concentrations are associated with faster flame spread rates and higher heat release rates in microgravity combustion experiments. This trend is supported by experiments EXP-0036 and EXP-0226, where increasing the oxygen concentration from 16.97% to 18.85% resulted in a slight increase in flame spread rate from 2.746 mm/s to 2.811 mm/s and a higher heat release rate from 1.906 kW to 2.027 kW.",
+    "The relationship between oxygen concentration and flame spread rate is influenced by other experimental conditions such as pressure and flow velocity, as seen in the different pressures (85.5 kPa vs 57.6 kPa) and flow velocities (13.93 cm/s vs 34.1 cm/s) in the experiments."
+  ],
+  "interpretation": "The experimental evidence suggests that increasing the oxygen concentration in microgravity combustion experiments leads to a higher flame spread rate and heat release rate. However, this relationship is not solely dependent on oxygen concentration but is also influenced by other factors such as pressure and flow velocity. The observed trends indicate a positive association between oxygen concentration and flame spread rate, but the exact nature of this relationship requires further investigation to understand the underlying mechanisms and interactions with other variables.",
+  "safety_insight": "Higher oxygen concentrations in microgravity environments can lead to more rapid and intense combustion, which increases the risk of fire spread and heat release. This implies that safety protocols should be more stringent in environments with higher oxygen concentrations to mitigate the risk of fire hazards.",
+  "limitations": [
+    "The available experiments do not provide a wide range of oxygen concentrations, which limits the generalizability of the observed trends.",
+    "The experiments were conducted under specific conditions of pressure and flow velocity, which may not be representative of all microgravity environments.",
+    "The relationship between oxygen concentration and flame behavior is complex and may be influenced by other variables not controlled in these experiments.",
+    "The machine learning model predictions are based on simulated data and are not certified for fire-safety guidance."
+  ],
+  "sources": [
+    "EXP-0036",
+    "EXP-0226"
+  ],
+  "model_used": "qwen/qwen-2.5-72b-instruct",
+  "answerability": {
+    "answerable": true,
+    "decision": "knowledge_base",
+    "reason": "No explicit experiment ID to validate.",
+    "top_score": 3.2997748851776123,
+    "query_coverage": 0.5,
+    "candidate_count": 2
+  },
+  "prediction_notice": "ML predictions use simulated training data and are not certified fire-safety guidance."
+}

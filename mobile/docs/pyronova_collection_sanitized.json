@@ -1,0 +1,1104 @@
+{
+  "info": {
+    "_collection_link": "https://go.postman.co/collection/57191955-f56cd99b-7070-4867-a62f-462a1beea4eb?source=collection_link",
+    "_exporter_id": "57191955",
+    "_postman_id": "f56cd99b-7070-4867-a62f-462a1beea4eb",
+    "name": "pyronova",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "item": [
+        {
+          "item": [
+            {
+              "name": "register (before otp verification)",
+              "request": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": ""
+                },
+                "header": [],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "{{base-url}}"
+                  ],
+                  "path": [
+                    "register"
+                  ],
+                  "raw": "{{base-url}}/register"
+                }
+              },
+              "response": [
+                {
+                  "_postman_previewlanguage": "text",
+                  "body": "{\r\n    \"message\": \"OTP sent to your email. Please verify to complete registration.\",\r\n    \"verification_id\": \"bad91fc9-bd86-4cec-a0e8-9028ba46200a\"\r\n}",
+                  "code": 200,
+                  "cookie": [],
+                  "header": null,
+                  "name": "Successful Request",
+                  "originalRequest": {
+                    "body": {
+                      "mode": "raw",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      },
+                      "raw": "{\r\n  \"name\": \"Test User\",\r\n  \"email\": \"user@example.com\",\r\n  \"password\": \"***\",\r\n  \"password_confirmation\": \"***\",\r\n  \"assigned_module\": \"HARMONY\"\r\n}"
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": {
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "path": [
+                        "register"
+                      ],
+                      "port": "8000",
+                      "protocol": "http",
+                      "raw": "http://127.0.0.1:8000/register"
+                    }
+                  },
+                  "status": "OK"
+                },
+                {
+                  "_postman_previewlanguage": "text",
+                  "body": "{\r\n    \"message\": \"The assigned module field is required.\",\r\n    \"errors\": {\r\n        \"assigned_module\": [\r\n            \"The assigned module field is required.\"\r\n        ]\r\n    }\r\n}",
+                  "code": 200,
+                  "cookie": [],
+                  "header": null,
+                  "name": "Missing required field",
+                  "originalRequest": {
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": {
+                      "host": [
+                        "{{base-url}}"
+                      ],
+                      "path": [
+                        "register"
+                      ],
+                      "raw": "{{base-url}}/register"
+                    }
+                  },
+                  "status": "OK"
+                }
+              ]
+            },
+            {
+              "name": "verify email before registeration",
+              "request": {
+                "header": [],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "{{base-url}}"
+                  ],
+                  "path": [
+                    "",
+                    "register",
+                    "verify-otp"
+                  ],
+                  "raw": "{{base-url}}/register/verify-otp"
+                }
+              },
+              "response": [
+                {
+                  "_postman_previewlanguage": "text",
+                  "body": "{\r\n    \"message\": \"Registration completed successfully.\",\r\n    \"token\": \"***\",\r\n    \"user\": {\r\n        \"name\": \"menna\",\r\n        \"email\": \"user@example.com\",\r\n        \"assigned_module\": \"HARMONY\",\r\n        \"updated_at\": \"2026-10-23T18:19:37.000000Z\",\r\n        \"created_at\": \"2026-10-23T18:19:37.000000Z\",\r\n        \"id\": 2,\r\n        \"email_verified_at\": \"2026-10-23T18:19:37.000000Z\"\r\n    }\r\n}",
+                  "code": 200,
+                  "cookie": [],
+                  "header": null,
+                  "name": "Successful request",
+                  "originalRequest": {
+                    "body": {
+                      "mode": "raw",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      },
+                      "raw": "{\r\n     \"verification_id\": \"ef783718-5a93-47db-954e-4b5d67a7a1df\",\r\n     \"otp\":\"1771\"\r\n}"
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": {
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "path": [
+                        "register",
+                        "verify-otp"
+                      ],
+                      "port": "8000",
+                      "protocol": "http",
+                      "raw": "http://127.0.0.1:8000/register/verify-otp"
+                    }
+                  },
+                  "status": "OK"
+                },
+                {
+                  "_postman_previewlanguage": "text",
+                  "body": "{\r\n    \"message\": \"Incorrect code.\"\r\n}",
+                  "code": 200,
+                  "cookie": [],
+                  "header": null,
+                  "name": "bad request",
+                  "originalRequest": {
+                    "body": {
+                      "mode": "raw",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      },
+                      "raw": "{\r\n     \"verification_id\": \"ef783718-5a93-47db-954e-4b5d67a7a1df\",\r\n     \"otp\":\"1772\"\r\n}"
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": {
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "path": [
+                        "register"
+                      ],
+                      "port": "8000",
+                      "protocol": "http",
+                      "raw": "http://127.0.0.1:8000/register"
+                    }
+                  },
+                  "status": "OK"
+                }
+              ]
+            },
+            {
+              "name": "login",
+              "request": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": ""
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "{{base-url}}"
+                  ],
+                  "path": [
+                    "login"
+                  ],
+                  "raw": "{{base-url}}/login"
+                }
+              },
+              "response": [
+                {
+                  "_postman_previewlanguage": "text",
+                  "body": "{\r\n    \"message\": \"The provided credentials are incorrect.\",\r\n    \"errors\": {\r\n        \"email\": [\r\n            \"The provided credentials are incorrect.\"\r\n        ]\r\n    }\r\n}",
+                  "code": 200,
+                  "cookie": [],
+                  "header": null,
+                  "name": "bad request",
+                  "originalRequest": {
+                    "body": {
+                      "mode": "raw",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      },
+                      "raw": "{\r\n    \"email\": \"user@example.com\",\r\n    \"password\": \"***\"\r\n}"
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": {
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "path": [
+                        "login"
+                      ],
+                      "port": "8000",
+                      "protocol": "http",
+                      "raw": "http://127.0.0.1:8000/login"
+                    }
+                  },
+                  "status": "OK"
+                },
+                {
+                  "_postman_previewlanguage": "text",
+                  "body": "{\r\n    \"message\": \"Login successful.\",\r\n    \"token\": \"***\",\r\n    \"user\": {\r\n        \"id\": 2,\r\n        \"name\": \"menna\",\r\n        \"email\": \"user@example.com\",\r\n        \"email_verified_at\": \"2026-10-23T18:19:37.000000Z\",\r\n        \"created_at\": \"2026-10-23T18:19:37.000000Z\",\r\n        \"updated_at\": \"2026-10-23T18:19:37.000000Z\",\r\n        \"assigned_module\": \"HARMONY\",\r\n        \"fcm_token\": null\r\n    }\r\n}",
+                  "code": 200,
+                  "cookie": [],
+                  "header": null,
+                  "name": "Successful request",
+                  "originalRequest": {
+                    "body": {
+                      "mode": "raw",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      },
+                      "raw": "{\r\n    \"email\": \"user@example.com\",\r\n    \"password\": \"***\"\r\n}"
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": {
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "path": [
+                        "login"
+                      ],
+                      "port": "8000",
+                      "protocol": "http",
+                      "raw": "http://127.0.0.1:8000/login"
+                    }
+                  },
+                  "status": "OK"
+                }
+              ]
+            },
+            {
+              "name": "logout",
+              "request": {
+                "auth": {
+                  "type": "bearer"
+                },
+                "header": [],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "{{base-url}}"
+                  ],
+                  "path": [
+                    "logout"
+                  ],
+                  "raw": "{{base-url}}/logout"
+                }
+              },
+              "response": [
+                {
+                  "_postman_previewlanguage": "text",
+                  "body": "{\r\n    \"message\": \"Logged out successfully\"\r\n}",
+                  "code": 200,
+                  "cookie": [],
+                  "header": null,
+                  "name": "logout",
+                  "originalRequest": {
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": {
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "path": [
+                        "logout"
+                      ],
+                      "port": "8000",
+                      "protocol": "http",
+                      "raw": "http://127.0.0.1:8000/logout"
+                    }
+                  },
+                  "status": "OK"
+                }
+              ]
+            },
+            {
+              "name": "reset-password",
+              "request": {
+                "header": [],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "{{base-url}}"
+                  ],
+                  "path": [
+                    "reset-password"
+                  ],
+                  "raw": "{{base-url}}/reset-password"
+                }
+              },
+              "response": [
+                {
+                  "_postman_previewlanguage": "text",
+                  "body": "{\r\n    \"status\": \"Your password has been reset.\"\r\n}",
+                  "code": 200,
+                  "cookie": [],
+                  "header": null,
+                  "name": "reset-password",
+                  "originalRequest": {
+                    "body": {
+                      "mode": "raw",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      },
+                      "raw": "{\r\n   \"token\":\"***\",\r\n   \"email\":\"user@example.com\",\r\n   \"password\":\"***\",\r\n   \"password_confirmation\":\"***\"\r\n}"
+                    },
+                    "header": [],
+                    "method": "POST",
+                    "url": {
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "path": [
+                        "reset-password"
+                      ],
+                      "port": "8000",
+                      "protocol": "http",
+                      "raw": "http://127.0.0.1:8000/reset-password"
+                    }
+                  },
+                  "status": "OK"
+                }
+              ]
+            },
+            {
+              "name": "forgot-password",
+              "request": {
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "{{base-url}}"
+                  ],
+                  "path": [
+                    "forgot-password"
+                  ],
+                  "raw": "{{base-url}}/forgot-password"
+                }
+              },
+              "response": [
+                {
+                  "_postman_previewlanguage": "text",
+                  "body": "{\r\n    \"status\": \"We have emailed your password reset link.\"\r\n}",
+                  "code": 200,
+                  "cookie": [],
+                  "header": null,
+                  "name": "forgot-password",
+                  "originalRequest": {
+                    "body": {
+                      "mode": "raw",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      },
+                      "raw": "{\r\n    \"email\":\"user@example.com\"\r\n}"
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": {
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "path": [
+                        "forgot-password"
+                      ],
+                      "port": "8000",
+                      "protocol": "http",
+                      "raw": "http://127.0.0.1:8000/forgot-password"
+                    }
+                  },
+                  "status": "OK"
+                }
+              ]
+            },
+            {
+              "name": "user profile",
+              "request": {
+                "auth": {
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "type": "string",
+                      "value": "token"
+                    }
+                  ],
+                  "type": "bearer"
+                },
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": ""
+                },
+                "header": [],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{{base-url}}"
+                  ],
+                  "path": [
+                    "me"
+                  ],
+                  "raw": "{{{base-url}}/me"
+                }
+              },
+              "response": [
+                {
+                  "_postman_previewlanguage": "text",
+                  "body": "{\r\n    \"name\": \"menna\",\r\n    \"module\": \"HARMONY\",\r\n    \"email\": \"user@example.com\"\r\n}",
+                  "code": 200,
+                  "cookie": [],
+                  "header": null,
+                  "name": "user profile",
+                  "originalRequest": {
+                    "header": [],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                      ],
+                      "path": [
+                        "me"
+                      ],
+                      "port": "8000",
+                      "protocol": "http",
+                      "raw": "http://127.0.0.1:8000/me"
+                    }
+                  },
+                  "status": "OK"
+                }
+              ]
+            }
+          ],
+          "name": "auth"
+        },
+        {
+          "name": "New ai chat",
+          "request": {
+            "auth": {
+              "bearer": [
+                {
+                  "key": "token",
+                  "type": "string",
+                  "value": "{{auth_secret_12ts}}"
+                }
+              ],
+              "type": "bearer"
+            },
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": ""
+            },
+            "header": [],
+            "method": "POST",
+            "url": {
+              "host": [
+                "{{base-url}}"
+              ],
+              "path": [
+                "chats"
+              ],
+              "raw": "{{base-url}}/chats"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "text",
+              "body": "{\r\n    \"message\": \"Chat created successfully\",\r\n    \"chat\": {\r\n        \"user_id\": 2,\r\n        \"title\": null,\r\n        \"updated_at\": \"2026-10-23T21:06:22.000000Z\",\r\n        \"created_at\": \"2026-10-23T21:06:22.000000Z\",\r\n        \"id\": 6\r\n    }\r\n}",
+              "code": 200,
+              "cookie": [],
+              "header": null,
+              "name": "New Request",
+              "originalRequest": {
+                "header": [],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "path": [
+                    "chats"
+                  ],
+                  "port": "8000",
+                  "protocol": "http",
+                  "raw": "http://127.0.0.1:8000/chats"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        },
+        {
+          "name": "ask ai",
+          "request": {
+            "auth": {
+              "bearer": [
+                {
+                  "key": "token",
+                  "type": "string",
+                  "value": "token"
+                }
+              ],
+              "type": "bearer"
+            },
+            "header": [],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{base-url}}"
+              ],
+              "path": [
+                "ask"
+              ],
+              "raw": "{{base-url}}/ask"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "text",
+              "body": " \"message\": \"Chatbot response generated successfully.\",\r\n    \"chat_id\": 6,\r\n    \"title\": \"How does oxygen concentration affect flame spread \",\r\n    \"data\": {\r\n        \"answer\": {\r\n            \"question\": \"Hello\",\r\n            \"answer\": \"Hello! 👋 I'm the Flame in Freefall Research Assistant. You can chat with me or ask about NASA microgravity combustion experiments, flame behavior, and fire-risk predictions.\",\r\n            \"experimental_evidence\": [],\r\n            \"prediction\": null,\r\n            \"observed_trends\": [],\r\n            \"interpretation\": \"\",\r\n            \"safety_insight\": \"\",\r\n            \"limitations\": [],\r\n            \"sources\": [],\r\n            \"model_used\": \"conversation_handler\",\r\n            \"answerability\": {\r\n                \"answerable\": true,\r\n                \"decision\": \"conversation\",\r\n                \"reason\": \"Handled by the conversational assistant.\"\r\n            },\r\n            \"prediction_notice\": \"ML predictions use simulated training data and are not certified fire-safety guidance.\"\r\n        }\r\n    }\r\n}",
+              "code": 200,
+              "cookie": [],
+              "header": null,
+              "name": "ask on old chat",
+              "originalRequest": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "\r\n  {\r\n    \"question\": \"How does oxygen concentration affect flame spread in microgravity?\",\r\n    \"chat_id\": 6\r\n}  "
+                },
+                "header": [],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "path": [
+                    "ask"
+                  ],
+                  "port": "8000",
+                  "protocol": "http",
+                  "raw": "http://127.0.0.1:8000/ask"
+                }
+              },
+              "status": "OK"
+            },
+            {
+              "_postman_previewlanguage": "text",
+              "body": "{\r\n    \"message\": \"Chatbot response generated successfully.\",\r\n    \"chat_id\": 8,\r\n    \"title\": \"Hello\",\r\n    \"data\": {\r\n        \"answer\": {\r\n            \"question\": \"Hello\",\r\n            \"answer\": \"Hello! 👋 I'm the Flame in Freefall Research Assistant. You can chat with me or ask about NASA microgravity combustion experiments, flame behavior, and fire-risk predictions.\",\r\n            \"experimental_evidence\": [],\r\n            \"prediction\": null,\r\n            \"observed_trends\": [],\r\n            \"interpretation\": \"\",\r\n            \"safety_insight\": \"\",\r\n            \"limitations\": [],\r\n            \"sources\": [],\r\n            \"model_used\": \"conversation_handler\",\r\n            \"answerability\": {\r\n                \"answerable\": true,\r\n                \"decision\": \"conversation\",\r\n                \"reason\": \"Handled by the conversational assistant.\"\r\n            },\r\n            \"prediction_notice\": \"ML predictions use simulated training data and are not certified fire-safety guidance.\"\r\n        }\r\n    }\r\n}",
+              "code": 200,
+              "cookie": [],
+              "header": null,
+              "name": "ask on new chat",
+              "originalRequest": {
+                "header": [],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "path": [
+                    "ask"
+                  ],
+                  "port": "8000",
+                  "protocol": "http",
+                  "raw": "http://127.0.0.1:8000/ask"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        },
+        {
+          "name": "all ai chats",
+          "request": {
+            "auth": {
+              "bearer": [
+                {
+                  "key": "token",
+                  "type": "string",
+                  "value": "token"
+                }
+              ],
+              "type": "bearer"
+            },
+            "header": [],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{base-url}}"
+              ],
+              "path": [
+                "chats"
+              ],
+              "raw": "{{base-url}}/chats"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "text",
+              "body": "{\r\n    \"chats\": [\r\n        {\r\n            \"id\": 8,\r\n            \"user_id\": 2,\r\n            \"title\": \"Hello\",\r\n            \"created_at\": \"2026-10-23T21:15:56.000000Z\",\r\n            \"updated_at\": \"2026-10-23T21:15:57.000000Z\"\r\n        },\r\n        {\r\n            \"id\": 7,\r\n            \"user_id\": 2,\r\n            \"title\": null,\r\n            \"created_at\": \"2026-10-23T21:08:17.000000Z\",\r\n            \"updated_at\": \"2026-10-23T21:08:17.000000Z\"\r\n        },\r\n        {\r\n            \"id\": 6,\r\n            \"user_id\": 2,\r\n            \"title\": \"How does oxygen concentration affect flame spread \",\r\n            \"created_at\": \"2026-10-23T21:06:22.000000Z\",\r\n            \"updated_at\": \"2026-10-23T21:10:44.000000Z\"\r\n        }\r\n    ]\r\n}",
+              "code": 200,
+              "cookie": [],
+              "header": null,
+              "name": "New Request",
+              "originalRequest": {
+                "header": [],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "path": [
+                    "chats"
+                  ],
+                  "port": "8000",
+                  "protocol": "http",
+                  "raw": "http://127.0.0.1:8000/chats"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        },
+        {
+          "name": "ai chat history (with id)",
+          "request": {
+            "auth": {
+              "bearer": [
+                {
+                  "key": "token",
+                  "type": "string",
+                  "value": "token"
+                }
+              ],
+              "type": "bearer"
+            },
+            "header": [],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{base-url}}"
+              ],
+              "path": [
+                "chats",
+                "id"
+              ],
+              "raw": "{{base-url}}/chats/id"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "text",
+              "body": "{\r\n    \"chat\": {\r\n        \"id\": 6,\r\n        \"user_id\": 2,\r\n        \"title\": \"How does oxygen concentration affect flame spread \",\r\n        \"created_at\": \"2026-10-23T21:06:22.000000Z\",\r\n        \"updated_at\": \"2026-10-23T21:10:44.000000Z\",\r\n        \"messages\": [\r\n            {\r\n                \"id\": 7,\r\n                \"chat_id\": 6,\r\n                \"created_at\": \"2026-10-23T21:10:44.000000Z\",\r\n                \"updated_at\": \"2026-10-23T21:10:44.000000Z\",\r\n                \"user_id\": 2,\r\n                \"message\": \"How does oxygen concentration affect flame spread in microgravity?\",\r\n                \"answer\": {\r\n                    \"question\": \"How does oxygen concentration affect flame spread in microgravity?\",\r\n                    \"answer\": \"Oxygen concentration affects flame spread in microgravity, with higher oxygen concentrations generally leading to increased flame spread rates, though other factors like pressure and flow velocity also play significant roles.\",\r\n                    \"experimental_evidence\": [\r\n                        {\r\n                            \"experiment_id\": \"EXP-0226\",\r\n                            \"oxygen_concentration\": 18.85,\r\n                            \"flame_temperature\": null,\r\n                            \"source\": \"FLEX-2\",\r\n                            \"finding\": \"Steady flame spread with a rate of 2.811 mm/s at 18.85% oxygen concentration.\"\r\n                        },\r\n                        {\r\n                            \"experiment_id\": \"EXP-0036\",\r\n                            \"oxygen_concentration\": 16.97,\r\n                            \"flame_temperature\": null,\r\n                            \"source\": \"FLEX-2\",\r\n                            \"finding\": \"Steady flame spread with a rate of 2.746 mm/s at 16.97% oxygen concentration.\"\r\n                        }\r\n                    ],\r\n                    \"prediction\": [\r\n                        {\r\n                            \"experiment_id\": \"EXP-0226\",\r\n                            \"fire\": true,\r\n                            \"label\": \"fire\",\r\n                            \"probability\": 0.8274,\r\n                            \"riskBand\": \"HIGH\",\r\n                            \"threshold\": 0.5,\r\n                            \"model\": \"random_forest\",\r\n                            \"inputs\": {\r\n                                \"oxygen_concentration_pct\": 18.85,\r\n                                \"pressure_kpa\": 57.6,\r\n                                \"flow_velocity_cm_s\": 34.1,\r\n                                \"ambient_temperature_c\": 25.1,\r\n                                \"material\": \"Nomex\",\r\n                                \"material_type\": \"solid\",\r\n                                \"flow_configuration\": \"concurrent\"\r\n                            },\r\n                            \"note\": \"Simulated-data model — research/educational, not certified safety guidance.\"\r\n                        },\r\n                        {\r\n                            \"experiment_id\": \"EXP-0036\",\r\n                            \"fire\": true,\r\n                            \"label\": \"fire\",\r\n                            \"probability\": 0.8578,\r\n                            \"riskBand\": \"HIGH\",\r\n                            \"threshold\": 0.5,\r\n                            \"model\": \"random_forest\",\r\n                            \"inputs\": {\r\n                                \"oxygen_concentration_pct\": 16.97,\r\n                                \"pressure_kpa\": 85.5,\r\n                                \"flow_velocity_cm_s\": 13.93,\r\n                                \"ambient_temperature_c\": 27.4,\r\n                                \"material\": \"Nomex\",\r\n                                \"material_type\": \"solid\",\r\n                                \"flow_configuration\": \"concurrent\"\r\n                            },\r\n                            \"note\": \"Simulated-data model — research/educational, not certified safety guidance.\"\r\n                        }\r\n                    ],\r\n                    \"observed_trends\": [\r\n                        \"higher oxygen concentration correlates with higher flame spread rate\",\r\n                        \"insufficient_evidence\",\r\n                        \"general_scientific_context\"\r\n                    ],\r\n                    \"interpretation\": \"The experiments show that increasing oxygen concentration from 16.97% to 18.85% resulted in a slight increase in flame spread rate (2.746 mm/s to 2.811 mm/s). However, other variables such as pressure and flow velocity also varied between the experiments, making it difficult to isolate the effect of oxygen concentration alone. The machine learning predictions indicate a high risk of fire under these conditions, but they are based on simulated data and not actual experimental measurements.\",\r\n                    \"safety_insight\": \"Higher oxygen concentrations in microgravity environments may increase the risk of sustained flame spread, necessitating careful control of oxygen levels to mitigate fire hazards.\",\r\n                    \"limitations\": [\r\n                        \"Limited number of experiments with varying oxygen concentrations.\",\r\n                        \"Confounding variables such as pressure and flow velocity may influence the results.\",\r\n                        \"Machine learning predictions are based on simulated data and not experimental measurements.\"\r\n                    ],\r\n                    \"sources\": [\r\n                        \"EXP-0226\",\r\n                        \"EXP-0036\"\r\n                    ],\r\n                    \"model_used\": \"qwen/qwen3-30b-a3b\",\r\n                    \"answerability\": {\r\n                        \"answerable\": true,\r\n                        \"decision\": \"knowledge_base\",\r\n                        \"reason\": \"No explicit experiment ID to validate.\",\r\n                        \"top_score\": 0.6234700679779053,\r\n                        \"query_coverage\": 0.8,\r\n                        \"candidate_count\": 2\r\n                    },\r\n                    \"prediction_notice\": \"ML predictions use simulated training data and are not certified fire-safety guidance.\"\r\n                }\r\n            },\r\n            {\r\n                \"id\": 8,\r\n                \"chat_id\": 6,\r\n                \"created_at\": \"2026-10-23T21:15:24.000000Z\",\r\n                \"updated_at\": \"2026-10-23T21:15:24.000000Z\",\r\n                \"user_id\": 2,\r\n                \"message\": \"Hello\",\r\n                \"answer\": {\r\n                    \"question\": \"Hello\",\r\n                    \"answer\": \"Hello! 👋 I'm the Flame in Freefall Research Assistant. You can chat with me or ask about NASA microgravity combustion experiments, flame behavior, and fire-risk predictions.\",\r\n                    \"experimental_evidence\": [],\r\n                    \"prediction\": null,\r\n                    \"observed_trends\": [],\r\n                    \"interpretation\": \"\",\r\n                    \"safety_insight\": \"\",\r\n                    \"limitations\": [],\r\n                    \"sources\": [],\r\n                    \"model_used\": \"conversation_handler\",\r\n                    \"answerability\": {\r\n                        \"answerable\": true,\r\n                        \"decision\": \"conversation\",\r\n                        \"reason\": \"Handled by the conversational assistant.\"\r\n                    },\r\n                    \"prediction_notice\": \"ML predictions use simulated training data and are not certified fire-safety guidance.\"\r\n                }\r\n            }\r\n        ]\r\n    }\r\n}",
+              "code": 200,
+              "cookie": [],
+              "header": null,
+              "name": "New Request",
+              "originalRequest": {
+                "header": [],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "path": [
+                    "chats",
+                    "6"
+                  ],
+                  "port": "8000",
+                  "protocol": "http",
+                  "raw": "http://127.0.0.1:8000/chats/6"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        },
+        {
+          "name": "guide",
+          "request": {
+            "auth": {
+              "bearer": [
+                {
+                  "key": "token",
+                  "type": "string",
+                  "value": "token"
+                }
+              ],
+              "type": "bearer"
+            },
+            "header": [],
+            "method": "GET",
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "text",
+              "body": "[\r\n    {\r\n        \"id\": 1,\r\n        \"step_order\": 1,\r\n        \"title\": \"Protect Yourself\",\r\n        \"body\": \"Protect yourself from smoke and hazardous combustion products using approved protective equipment and following emergency procedures.\",\r\n        \"created_at\": \"2026-10-20 09:12:50\",\r\n        \"updated_at\": \"2026-10-20 09:12:50\"\r\n    },\r\n    {\r\n        \"id\": 2,\r\n        \"step_order\": 2,\r\n        \"title\": \"Report the Fire to the Crew\",\r\n        \"body\": \"Immediately alert the crew and follow the spacecraft fire-reporting and warning procedures.\",\r\n        \"created_at\": \"2026-10-20 09:15:44\",\r\n        \"updated_at\": \"2026-10-20 09:15:44\"\r\n    },\r\n    {\r\n        \"id\": 3,\r\n        \"step_order\": 3,\r\n        \"title\": \"Isolate Ignition Sources\",\r\n        \"body\": \"Isolate affected equipment from its power source only when directed by the spacecraft approved emergency procedures.\",\r\n        \"created_at\": \"2026-10-20 09:15:44\",\r\n        \"updated_at\": \"2026-10-20 09:15:44\"\r\n    },\r\n    {\r\n        \"id\": 4,\r\n        \"step_order\": 4,\r\n        \"title\": \"Suppress the Fire\",\r\n        \"body\": \"Use approved fire-suppression equipment according to crew training and spacecraft-specific procedures.\",\r\n        \"created_at\": \"2026-10-20 09:15:44\",\r\n        \"updated_at\": \"2026-10-20 09:15:44\"\r\n    },\r\n    {\r\n        \"id\": 5,\r\n        \"step_order\": 5,\r\n        \"title\": \"Check the Atmosphere\",\r\n        \"body\": \"Check for smoke and harmful combustion products before considering the surrounding atmosphere safe.\",\r\n        \"created_at\": \"2026-10-20 09:15:44\",\r\n        \"updated_at\": \"2026-10-20 09:15:44\"\r\n    },\r\n    {\r\n        \"id\": 6,\r\n        \"step_order\": 6,\r\n        \"title\": \"Restore Safe Conditions\",\r\n        \"body\": \"Resume normal operations only after the atmosphere and affected equipment have been assessed and declared safe under approved procedures.\",\r\n        \"created_at\": \"2026-10-20 09:15:44\",\r\n        \"updated_at\": \"2026-10-20 09:15:44\"\r\n    }\r\n]",
+              "code": 200,
+              "cookie": [],
+              "header": null,
+              "name": "guide",
+              "originalRequest": {
+                "header": [],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "path": [
+                    "guide"
+                  ],
+                  "port": "8000",
+                  "protocol": "http",
+                  "raw": "http://127.0.0.1:8000/guide"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        },
+        {
+          "name": "simulate",
+          "request": {
+            "auth": {
+              "bearer": [
+                {
+                  "key": "token",
+                  "type": "string",
+                  "value": "token"
+                }
+              ],
+              "type": "bearer"
+            },
+            "header": [],
+            "method": "POST",
+            "url": {
+              "host": [
+                "{{base-url}}"
+              ],
+              "path": [
+                "simulate"
+              ],
+              "raw": "{{base-url}}/simulate"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "text",
+              "body": "{\r\n    \"message\": \"Fire simulation triggered successfully.\",\r\n    \"module\": \"HARMONY\"\r\n}",
+              "code": 200,
+              "cookie": [],
+              "header": null,
+              "name": "successful",
+              "originalRequest": {
+                "header": [],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "path": [
+                    "simulate"
+                  ],
+                  "port": "8000",
+                  "protocol": "http",
+                  "raw": "http://127.0.0.1:8000/simulate"
+                }
+              },
+              "status": "OK"
+            },
+            {
+              "_postman_previewlanguage": "text",
+              "body": "{\r\n    \"message\": \"No registered devices found for this module.\",\r\n    \"exception\": \"Symfony\\\\Component\\\\HttpKernel\\\\Exception\\\\HttpException\",\r\n    \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Application.php\",\r\n    \"line\": 1448,\r\n    \"trace\": [\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\helpers.php\",\r\n            \"line\": 67,\r\n            \"function\": \"abort\",\r\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\app\\\\Services\\\\PushNotificationService.php\",\r\n            \"line\": 29,\r\n            \"function\": \"abort\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\app\\\\Http\\\\Controllers\\\\SimulateFireController.php\",\r\n            \"line\": 26,\r\n            \"function\": \"sendToModule\",\r\n            \"class\": \"App\\\\Services\\\\PushNotificationService\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\ControllerDispatcher.php\",\r\n            \"line\": 46,\r\n            \"function\": \"sem\",\r\n            \"class\": \"App\\\\Http\\\\Controllers\\\\SimulateFireController\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Route.php\",\r\n            \"line\": 276,\r\n            \"function\": \"dispatch\",\r\n            \"class\": \"Illuminate\\\\Routing\\\\ControllerDispatcher\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Route.php\",\r\n            \"line\": 216,\r\n            \"function\": \"runController\",\r\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\r\n            \"line\": 834,\r\n            \"function\": \"run\",\r\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\r\n            \"line\": 180,\r\n            \"function\": \"{closure:Illuminate\\\\Routing\\\\Router::runRouteWithinStack():833}\",\r\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\boost\\\\src\\\\Middleware\\\\InjectBoost.php\",\r\n            \"line\": 22,\r\n            \"function\": \"{closure:Illuminate\\\\Pipeline\\\\Pipeline::prepareDestination():178}\",\r\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\r\n            \"line\": 219,\r\n            \"function\": \"handle\",\r\n            \"class\": \"Laravel\\\\Boost\\\\Middleware\\\\InjectBoost\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings.php\",\r\n            \"line\": 52,\r\n            \"function\": \"{closure:{closure:Illuminate\\\\Pipeline\\\\Pipeline::carry():194}:195}\",\r\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\r\n            \"line\": 219,\r\n            \"function\": \"handle\",\r\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Auth\\\\Middleware\\\\Authenticate.php\",\r\n            \"line\": 63,\r\n            \"function\": \"{closure:{closure:Illuminate\\\\Pipeline\\\\Pipeline::carry():194}:195}\",\r\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\r\n            \"line\": 219,\r\n            \"function\": \"handle\",\r\n            \"class\": \"Illuminate\\\\Auth\\\\Middleware\\\\Authenticate\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestForgery.php\",\r\n            \"line\": 104,\r\n            \"function\": \"{closure:{closure:Illuminate\\\\Pipeline\\\\Pipeline::carry():194}:195}\",\r\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\r\n            \"line\": 219,\r\n            \"function\": \"handle\",\r\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestForgery\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\View\\\\Middleware\\\\ShareErrorsFromSession.php\",\r\n            \"line\": 48,\r\n            \"function\": \"{closure:{closure:Illuminate\\\\Pipeline\\\\Pipeline::carry():194}:195}\",\r\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\r\n            \"line\": 219,\r\n            \"function\": \"handle\",\r\n            \"class\": \"Illuminate\\\\View\\\\Middleware\\\\ShareErrorsFromSession\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Session\\\\Middleware\\\\StartSession.php\",\r\n            \"line\": 120,\r\n            \"function\": \"{closure:{closure:Illuminate\\\\Pipeline\\\\Pipeline::carry():194}:195}\",\r\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Session\\\\Middleware\\\\StartSession.php\",\r\n            \"line\": 63,\r\n            \"function\": \"handleStatefulRequest\",\r\n            \"class\": \"Illuminate\\\\Session\\\\Middleware\\\\StartSession\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\r\n            \"line\": 219,\r\n            \"function\": \"handle\",\r\n            \"class\": \"Illuminate\\\\Session\\\\Middleware\\\\StartSession\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Cookie\\\\Middleware\\\\AddQueuedCookiesToResponse.php\",\r\n            \"line\": 36,\r\n            \"function\": \"{closure:{closure:Illuminate\\\\Pipeline\\\\Pipeline::carry():194}:195}\",\r\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\r\n            \"line\": 219,\r\n            \"function\": \"handle\",\r\n            \"class\": \"Illuminate\\\\Cookie\\\\Middleware\\\\AddQueuedCookiesToResponse\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Cookie\\\\Middleware\\\\EncryptCookies.php\",\r\n            \"line\": 74,\r\n            \"function\": \"{closure:{closure:Illuminate\\\\Pipeline\\\\Pipeline::carry():194}:195}\",\r\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\r\n            \"line\": 219,\r\n            \"function\": \"handle\",\r\n            \"class\": \"Illuminate\\\\Cookie\\\\Middleware\\\\EncryptCookies\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\r\n            \"line\": 137,\r\n            \"function\": \"{closure:{closure:Illuminate\\\\Pipeline\\\\Pipeline::carry():194}:195}\",\r\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\r\n            \"line\": 833,\r\n            \"function\": \"then\",\r\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\r\n            \"line\": 812,\r\n            \"function\": \"runRouteWithinStack\",\r\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\r\n            \"line\": 776,\r\n            \"function\": \"runRoute\",\r\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\r\n            \"line\": 765,\r\n            \"function\": \"dispatchToRoute\",\r\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\r\n            \"line\": 200,\r\n            \"function\": \"dispatch\",\r\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\r\n            \"line\": 180,\r\n            \"function\": \"{closure:Illuminate\\\\Foundation\\\\Http\\\\Kernel::dispatchToRouter():197}\",\r\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\mcp\\\\src\\\\Server\\\\Middleware\\\\AddWwwAuthenticateHeader.php\",\r\n            \"line\": 21,\r\n            \"function\": \"{closure:Illuminate\\\\Pipeline\\\\Pipeline::prepareDestination():178}\",\r\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\r\n            \"line\": 219,\r\n            \"function\": \"handle\",\r\n            \"class\": \"Laravel\\\\Mcp\\\\Server\\\\Middleware\\\\AddWwwAuthenticateHeader\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\r\n            \"line\": 21,\r\n            \"function\": \"{closure:{closure:Illuminate\\\\Pipeline\\\\Pipeline::carry():194}:195}\",\r\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull.php\",\r\n            \"line\": 31,\r\n            \"function\": \"handle\",\r\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\r\n            \"line\": 219,\r\n            \"function\": \"handle\",\r\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\r\n            \"line\": 21,\r\n            \"function\": \"{closure:{closure:Illuminate\\\\Pipeline\\\\Pipeline::carry():194}:195}\",\r\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings.php\",\r\n            \"line\": 51,\r\n            \"function\": \"handle\",\r\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\r\n            \"line\": 219,\r\n            \"function\": \"handle\",\r\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\ValidatePostSize.php\",\r\n            \"line\": 27,\r\n            \"function\": \"{closure:{closure:Illuminate\\\\Pipeline\\\\Pipeline::carry():194}:195}\",\r\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\r\n            \"line\": 219,\r\n            \"function\": \"handle\",\r\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\ValidatePostSize\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance.php\",\r\n            \"line\": 110,\r\n            \"function\": \"{closure:{closure:Illuminate\\\\Pipeline\\\\Pipeline::carry():194}:195}\",\r\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\r\n            \"line\": 219,\r\n            \"function\": \"handle\",\r\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\HandleCors.php\",\r\n            \"line\": 74,\r\n            \"function\": \"{closure:{closure:Illuminate\\\\Pipeline\\\\Pipeline::carry():194}:195}\",\r\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\r\n            \"line\": 219,\r\n            \"function\": \"handle\",\r\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\HandleCors\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\TrustProxies.php\",\r\n            \"line\": 58,\r\n            \"function\": \"{closure:{closure:Illuminate\\\\Pipeline\\\\Pipeline::carry():194}:195}\",\r\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\r\n            \"line\": 219,\r\n            \"function\": \"handle\",\r\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\TrustProxies\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\InvokeDeferredCallbacks.php\",\r\n            \"line\": 22,\r\n            \"function\": \"{closure:{closure:Illuminate\\\\Pipeline\\\\Pipeline::carry():194}:195}\",\r\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\r\n            \"line\": 219,\r\n            \"function\": \"handle\",\r\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\InvokeDeferredCallbacks\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\ValidatePathEncoding.php\",\r\n            \"line\": 28,\r\n            \"function\": \"{closure:{closure:Illuminate\\\\Pipeline\\\\Pipeline::carry():194}:195}\",\r\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\r\n            \"line\": 219,\r\n            \"function\": \"handle\",\r\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\ValidatePathEncoding\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\r\n            \"line\": 137,\r\n            \"function\": \"{closure:{closure:Illuminate\\\\Pipeline\\\\Pipeline::carry():194}:195}\",\r\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\r\n            \"line\": 175,\r\n            \"function\": \"then\",\r\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\r\n            \"line\": 144,\r\n            \"function\": \"sendRequestThroughRouter\",\r\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Application.php\",\r\n            \"line\": 1228,\r\n            \"function\": \"handle\",\r\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\public\\\\index.php\",\r\n            \"line\": 20,\r\n            \"function\": \"handleRequest\",\r\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\r\n            \"type\": \"->\"\r\n        },\r\n        {\r\n            \"file\": \"<project>\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\resources\\\\server.php\",\r\n            \"line\": 23,\r\n            \"function\": \"require_once\"\r\n        }\r\n    ]\r\n}",
+              "code": 200,
+              "cookie": [],
+              "header": null,
+              "name": "bad request",
+              "originalRequest": {
+                "header": [],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "path": [
+                    "simulate"
+                  ],
+                  "port": "8000",
+                  "protocol": "http",
+                  "raw": "http://127.0.0.1:8000/simulate"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        },
+        {
+          "name": "fcm update",
+          "request": {
+            "auth": {
+              "bearer": [
+                {
+                  "key": "token",
+                  "type": "string",
+                  "value": "token"
+                }
+              ],
+              "type": "bearer"
+            },
+            "header": [],
+            "method": "PUT",
+            "url": {
+              "host": [
+                "{{base-url}}"
+              ],
+              "path": [
+                "fcm-token"
+              ],
+              "raw": "{{base-url}}/fcm-token"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "text",
+              "body": "{\r\n    \"message\": \"fcm token updated\"\r\n}",
+              "code": 200,
+              "cookie": [],
+              "header": null,
+              "name": "fcm update",
+              "originalRequest": {
+                "auth": {
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "type": "string",
+                      "value": "token"
+                    }
+                  ],
+                  "type": "bearer"
+                },
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\r\n    \"fcm_token\":\"***\"\r\n}"
+                },
+                "header": [],
+                "method": "PUT",
+                "url": {
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "path": [
+                    "fcm-token"
+                  ],
+                  "port": "8000",
+                  "protocol": "http",
+                  "raw": "http://127.0.0.1:8000/fcm-token"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        },
+        {
+          "name": "reset-module",
+          "request": {
+            "auth": {
+              "bearer": [
+                {
+                  "key": "token",
+                  "type": "string",
+                  "value": "token"
+                }
+              ],
+              "type": "bearer"
+            },
+            "header": [],
+            "method": "PUT",
+            "url": {
+              "host": [
+                "{{base-url}}"
+              ],
+              "path": [
+                "reset-module"
+              ],
+              "raw": "{{base-url}}/reset-module"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "text",
+              "body": "{\r\n    \"message\": \"Assigned Module Updated Successfully\"\r\n}",
+              "code": 200,
+              "cookie": [],
+              "header": null,
+              "name": "reset-module",
+              "originalRequest": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\r\n    \"assigned_module\":\"KIBO\"\r\n}"
+                },
+                "header": [],
+                "method": "PUT",
+                "url": {
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "path": [
+                    "reset-module"
+                  ],
+                  "port": "8000",
+                  "protocol": "http",
+                  "raw": "http://127.0.0.1:8000/reset-module"
+                }
+              },
+              "status": "OK"
+            }
+          ]
+        }
+      ],
+      "name": "mobile"
+    }
+  ]
+}

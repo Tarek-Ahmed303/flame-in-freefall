@@ -1,0 +1,15 @@
+local.properties
+*.jks
+*.keystore
+build/
+.gradle/
+.idea/
+.kotlin/
+*.apk
+*.aab
+google-services.json
+*service-account*.json
+*firebase-adminsdk*.json
+*.pem
+.env
+.DS_Store

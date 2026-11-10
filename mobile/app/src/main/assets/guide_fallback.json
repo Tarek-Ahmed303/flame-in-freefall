@@ -1,0 +1,36 @@
+[
+    {
+        "id":  [
+                   1,
+                   2,
+                   3,
+                   4,
+                   5,
+                   6
+               ],
+        "step_order":  [
+                           1,
+                           2,
+                           3,
+                           4,
+                           5,
+                           6
+                       ],
+        "title":  [
+                      "Protect Yourself",
+                      "Report the Fire to the Crew",
+                      "Isolate Ignition Sources",
+                      "Suppress the Fire",
+                      "Check the Atmosphere",
+                      "Restore Safe Conditions"
+                  ],
+        "body":  [
+                     "Protect yourself from smoke and hazardous combustion products using approved protective equipment and following emergency procedures.",
+                     "Immediately alert the crew and follow the spacecraft fire-reporting and warning procedures.",
+                     "Isolate affected equipment from its power source only when directed by the spacecraft approved emergency procedures.",
+                     "Use approved fire-suppression equipment according to crew training and spacecraft-specific procedures.",
+                     "Check for smoke and harmful combustion products before considering the surrounding atmosphere safe.",
+                     "Resume normal operations only after the atmosphere and affected equipment have been assessed and declared safe under approved procedures."
+                 ]
+    }
+]

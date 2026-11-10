@@ -1,0 +1,84 @@
+{
+  "question": "How does oxygen concentration affect flame behavior in microgravity?",
+  "answer": "In microgravity, the oxygen concentration significantly affects flame behavior. Higher oxygen concentrations support steady flame spread, while lower concentrations lead to flame extinction.",
+  "experimental_evidence": [
+    {
+      "experiment_id": "EXP-0036",
+      "oxygen_concentration": 16.97,
+      "flame_temperature": null,
+      "source": "FLEX-2",
+      "finding": "At an oxygen concentration of 16.97%, the flame spread rate was 2.746 mm/s, and the heat release rate was 1.906 kW, resulting in steady flame spread."
+    },
+    {
+      "experiment_id": "EXP-0048",
+      "oxygen_concentration": 14.32,
+      "flame_temperature": null,
+      "source": "FLEX-2",
+      "finding": "At an oxygen concentration of 14.32%, the flame spread rate was 0.0 mm/s, and the heat release rate was 0.493 kW, leading to flame extinction."
+    }
+  ],
+  "prediction": [
+    {
+      "experiment_id": "EXP-0036",
+      "fire": true,
+      "label": "fire",
+      "probability": 0.8578,
+      "riskBand": "HIGH",
+      "threshold": 0.5,
+      "model": "random_forest",
+      "inputs": {
+        "oxygen_concentration_pct": 16.97,
+        "pressure_kpa": 85.5,
+        "flow_velocity_cm_s": 13.93,
+        "ambient_temperature_c": 27.4,
+        "material": "Nomex",
+        "material_type": "solid",
+        "flow_configuration": "concurrent"
+      },
+      "note": "Simulated-data model — research/educational, not certified safety guidance."
+    },
+    {
+      "experiment_id": "EXP-0048",
+      "fire": false,
+      "label": "no_fire",
+      "probability": 0.076,
+      "riskBand": "LOW",
+      "threshold": 0.5,
+      "model": "random_forest",
+      "inputs": {
+        "oxygen_concentration_pct": 14.32,
+        "pressure_kpa": 71.1,
+        "flow_velocity_cm_s": 31.1,
+        "ambient_temperature_c": 22.8,
+        "material": "Nomex",
+        "material_type": "solid",
+        "flow_configuration": "concurrent"
+      },
+      "note": "Simulated-data model — research/educational, not certified safety guidance."
+    }
+  ],
+  "observed_trends": [
+    "Higher oxygen concentrations (e.g., 16.97%) support steady flame spread, while lower concentrations (e.g., 14.32%) result in flame extinction. (supported by EXP-0036 and EXP-0048)"
+  ],
+  "interpretation": "The experimental evidence from FLEX-2 investigations shows a clear relationship between oxygen concentration and flame behavior in microgravity. At higher oxygen concentrations, the flame spreads steadily and releases more heat, whereas at lower concentrations, the flame extinguishes. This indicates that oxygen concentration is a critical factor in sustaining combustion in microgravity environments.",
+  "safety_insight": "In microgravity, maintaining oxygen concentrations above a certain threshold is crucial for sustaining combustion. Below this threshold, the risk of fire is significantly reduced, as the flame is likely to extinguish.",
+  "limitations": [
+    "The experiments only provide data for two specific oxygen concentrations, which may not fully represent the entire range of possible concentrations.",
+    "The experiments were conducted with specific materials (Nomex) and conditions, which may not be generalizable to other materials or environments.",
+    "The machine learning predictions are based on simulated data and are not certified for fire-safety guidance."
+  ],
+  "sources": [
+    "EXP-0036",
+    "EXP-0048"
+  ],
+  "model_used": "qwen/qwen-2.5-72b-instruct",
+  "answerability": {
+    "answerable": true,
+    "decision": "knowledge_base",
+    "reason": "No explicit experiment ID to validate.",
+    "top_score": -2.8965439796447754,
+    "query_coverage": 0.6,
+    "candidate_count": 2
+  },
+  "prediction_notice": "ML predictions use simulated training data and are not certified fire-safety guidance."
+}
