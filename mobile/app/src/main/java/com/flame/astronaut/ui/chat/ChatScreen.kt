@@ -295,6 +295,15 @@ private fun StepUpcoming(n: Int, step: Step) {
 
 @Composable
 private fun StepCurrent(n: Int, total: Int, step: Step, onDone: () -> Unit) {
+    // Speaker button reads this step aloud (tap again to stop); speech stops on step change / leaving the screen.
+    val context = androidx.compose.ui.platform.LocalContext.current
+    var speaking by remember { mutableStateOf(false) }
+    val speaker = remember {
+        val main = android.os.Handler(android.os.Looper.getMainLooper())
+        com.flame.astronaut.voice.StepSpeaker(context) { v -> main.post { speaking = v } }
+    }
+    DisposableEffect(Unit) { onDispose { speaker.release() } }
+    LaunchedEffect(n) { speaker.stop() }
     Column(
         Modifier.fillMaxWidth().drawBehind { drawRoundRect(Color(0x1AFF7A2F), Offset(-4.dp.toPx(), -4.dp.toPx()), androidx.compose.ui.geometry.Size(size.width + 8.dp.toPx(), size.height + 8.dp.toPx()), androidx.compose.ui.geometry.CornerRadius(20.dp.toPx())) }
             .clip(RoundedCornerShape(16.dp)).background(Color(0xFF14100E)).border(1.dp, C.Orange, RoundedCornerShape(16.dp)).padding(16.dp),
@@ -309,14 +318,20 @@ private fun StepCurrent(n: Int, total: Int, step: Step, onDone: () -> Unit) {
         Text(step.body, style = sans(14f, Color(0xFFC9D2DE), lh = 1.5f))
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             Row(
-                Modifier.weight(1f).height(48.dp).clip(RoundedCornerShape(12.dp)).background(C.Orange).clickable(onClick = onDone),
+                Modifier.weight(1f).height(48.dp).clip(RoundedCornerShape(12.dp)).background(C.Orange).clickable { speaker.stop(); onDone() },
                 horizontalArrangement = Arrangement.Center, verticalAlignment = Alignment.CenterVertically,
             ) {
                 FIcon(Ic.Check, size = 18.dp, tint = C.OnOrange); Spacer(Modifier.width(8.dp))
                 Text("MARK DONE", style = chakra(14f, C.OnOrange, FontWeight.Bold, .14f))
             }
-            Box(Modifier.size(48.dp).clip(RoundedCornerShape(12.dp)).border(1.dp, Color(0x73FF7A2F), RoundedCornerShape(12.dp)), contentAlignment = Alignment.Center) {
-                FIcon(Ic.Speaker, size = 20.dp, tint = C.OrangeLight)
+            Box(
+                Modifier.size(48.dp).clip(RoundedCornerShape(12.dp))
+                    .background(if (speaking) C.Orange else Color.Transparent)
+                    .border(1.dp, Color(0x73FF7A2F), RoundedCornerShape(12.dp))
+                    .clickable { speaker.toggle(n, step.title, step.body) },
+                contentAlignment = Alignment.Center,
+            ) {
+                FIcon(Ic.Speaker, size = 20.dp, tint = if (speaking) C.OnOrange else C.OrangeLight)
             }
         }
     }

@@ -22,6 +22,7 @@ fun Throwable.userMessage(): String = when (this) {
 }
 
 private fun HttpException.httpMessage(): String {
+    if (code() == 401) return "Your session has expired. Please sign in again."
     val body = runCatching { response()?.errorBody()?.string() }.getOrNull()
     val parsed = body?.let { runCatching { AssistantJson.instance.decodeFromString(ApiErrorBody.serializer(), it) }.getOrNull() }
     val firstField = parsed?.errors?.values?.firstOrNull()?.firstOrNull()
@@ -42,6 +43,9 @@ private fun HttpException.httpMessage(): String {
 private val internalMarkers = listOf(
     "curl", "http://", "https://", "sqlstate", "exception", "stack", "vendor", "resolve host", "connection refused",
     "timed out", "guzzle", "illuminate", "\\", ".php", "trycloudflare",
+    // PHP/file-system errors that expose server paths (e.g. a missing Firebase credentials file on the host)
+    "::", "/var/", "/home/", "/tmp/", "storage/", "failed to open stream", "no such file", "service-account",
+    "permission denied", ".json",
 )
 
 private fun String.looksInternal(): Boolean = length > 220 || internalMarkers.any { contains(it, ignoreCase = true) }

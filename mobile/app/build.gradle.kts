@@ -18,7 +18,7 @@ val localProps = Properties().apply {
     val f = rootProject.file("local.properties")
     if (f.exists()) f.inputStream().use { load(it) }
 }
-val defaultBaseUrl = "https://gap-concerned-sorted-pending.trycloudflare.com/"
+val defaultBaseUrl = "https://pyronova-flame-in-freefall.vercel.app/"
 val baseUrl: String = (localProps.getProperty("flame.baseUrl") ?: (project.findProperty("flameBaseUrl") as String?) ?: defaultBaseUrl)
     .trim().let { if (it.endsWith("/")) it else "$it/" }
 val useFake: Boolean = (localProps.getProperty("flame.useFake") ?: (project.findProperty("flameUseFake") as String?) ?: "false").trim().toBoolean()

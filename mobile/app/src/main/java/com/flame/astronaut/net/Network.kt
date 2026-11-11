@@ -2,24 +2,23 @@ package com.flame.astronaut.net
 
 import com.flame.astronaut.BuildConfig
 import com.flame.astronaut.assistant.AssistantJson
-import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.SharedFlow
-import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.runBlocking
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.kotlinx.serialization.asConverterFactory
 import java.util.concurrent.TimeUnit
+import kotlinx.coroutines.flow.receiveAsFlow
 
 /** Signals that the server rejected our token (401) — the app clears the session and goes to the login screen. */
 class SessionManager(private val tokens: TokenStore) {
-    private val _loggedOut = MutableSharedFlow<Unit>(extraBufferCapacity = 1)
-    val loggedOut: SharedFlow<Unit> = _loggedOut.asSharedFlow()
+    // A Channel keeps the event until the nav host collects it (a 401 can arrive before it starts listening).
+    private val _loggedOut = kotlinx.coroutines.channels.Channel<Unit>(kotlinx.coroutines.channels.Channel.CONFLATED)
+    val loggedOut: kotlinx.coroutines.flow.Flow<Unit> = _loggedOut.receiveAsFlow()
 
     fun onUnauthorized() {
         runBlocking { tokens.clear() }
-        _loggedOut.tryEmit(Unit)
+        _loggedOut.trySend(Unit)
     }
 }
 
