@@ -1,3 +1,8 @@
+
+@php
+    $otpDigits = str_split((string) $otp);
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +15,7 @@
 
     {{-- Preheader --}}
     <div style="display:none; max-height:0; overflow:hidden; opacity:0;">
-        Reset your PyroNova account password securely.
+        Your PyroNova password reset code expires in 3 minutes.
     </div>
 
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0"
@@ -54,38 +59,70 @@
 
                             <p style="max-width:420px; margin:20px auto 0; color:#B4BBC9; font-size:14px; line-height:1.8;">
                                 Forgot your password? No worries.
-                                Use the button below to create a new password
+                                Enter the verification code below to reset your password
                                 and get back to exploring with PyroNova.
                             </p>
                         </td>
                     </tr>
 
-                    {{-- Reset Button --}}
+                    {{-- OTP --}}
                     <tr>
-                        <td align="center" style="padding:36px 28px 0;">
+                        <td style="padding:32px 24px 0;">
 
-                            <table role="presentation" cellpadding="0" cellspacing="0">
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0"
+                                   style="background-color:#0B1222; border:1px solid #39301F; border-radius:14px;">
+
                                 <tr>
-                                    <td align="center" bgcolor="#E8C27A"
-                                        style="border-radius:8px;">
-                                        <a href="{{ $url }}"
-                                           style="display:inline-block; padding:16px 36px; color:#080D1A; font-size:14px; font-weight:bold; text-decoration:none; letter-spacing:1px;">
-                                            RESET PASSWORD
-                                        </a>
+                                    <td align="center" style="padding:26px 8px;">
+
+                                        <p style="margin:0 0 22px; color:#7D8597; font-size:10px; letter-spacing:3px; text-transform:uppercase;">
+                                            Password Reset Code
+                                        </p>
+
+                                        <table role="presentation" align="center" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                @foreach ($otpDigits as $digit)
+                                                    <td style="padding:0 4px;">
+                                                        <table role="presentation" cellpadding="0" cellspacing="0">
+                                                            <tr>
+                                                                <td align="center" valign="middle"
+                                                                    style="width:48px; height:62px; background-color:#0E1526; border:1px solid #705526; border-radius:9px; color:#FFD9A0; font-family:'Courier New', monospace; font-size:29px; font-weight:bold;">
+                                                                    {{ $digit }}
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                @endforeach
+                                            </tr>
+                                        </table>
+
+                                        <p style="margin:20px 0 0; color:#7D8597; font-size:12px;">
+                                            Or copy:
+                                            <span style="color:#E8C27A; font-family:'Courier New', monospace; font-size:15px; letter-spacing:3px;">
+                                                {{ $otp }}
+                                            </span>
+                                        </p>
+
                                     </td>
                                 </tr>
+
+                                {{-- Expiration --}}
+                                <tr>
+                                    <td align="center"
+                                        style="padding:15px 10px; background-color:#17150F; border-top:1px solid #39301F;">
+
+                                        <span style="color:#F5A623;">&#9679;</span>
+
+                                        <span style="color:#F7C46C; font-size:13px; font-weight:bold;">
+                                            This code expires in 3 minutes.
+                                        </span>
+                                    </td>
+                                </tr>
+
                             </table>
-
-                            <p style="margin:22px 0 0; color:#7D8597; font-size:12px; line-height:1.8;">
-                                This password reset link expires in
-                                {{ config('auth.passwords.'.config('auth.defaults.passwords').'.expire') }}
-                                minutes.
-                            </p>
-
                         </td>
                     </tr>
 
-                  
                     {{-- Security Note --}}
                     <tr>
                         <td align="center" style="padding:30px 28px 38px;">
